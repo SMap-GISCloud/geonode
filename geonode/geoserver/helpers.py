@@ -109,7 +109,7 @@ if not hasattr(settings, 'OGC_SERVER'):
     msg = (
         'Please configure OGC_SERVER when enabling geonode.geoserver.'
         ' More info can be found at '
-        'http://docs.geonode.org/en/2.10.x/basic/settings/index.html#ogc-server')
+        'https://giscloud.vn/en/2.10.x/basic/settings/index.html#ogc-server')
     raise ImproperlyConfigured(msg)
 
 
@@ -1380,7 +1380,7 @@ def cleanup(name, uuid):
 
 def create_geoserver_db_featurestore(
         store_type=None, store_name=None,
-        author_name='admin', author_email='admin@geonode.org',
+        author_name='admin', author_email='admin@smap.com.vn',
         charset="UTF-8", workspace=None):
     cat = gs_catalog
     dsname = store_name or ogc_server_settings.DATASTORE

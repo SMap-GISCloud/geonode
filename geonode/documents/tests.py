@@ -163,7 +163,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
         superuser = get_user_model().objects.get(pk=2)
         c = Document.objects.create(
             uuid=str(uuid4()),
-            doc_url="http://geonode.org/map.pdf",
+            doc_url="https://smap.com.vn/map.pdf",
             owner=superuser,
             title="SMap Map")
         doc = Document.objects.get(pk=c.id)
@@ -178,15 +178,15 @@ class DocumentsTest(GeoNodeBaseTestSupport):
         form_data = {
             'title': 'SMap Map',
             'permissions': '{"users":{"AnonymousUser": ["view_resourcebase"]},"groups":{}}',
-            'doc_url': 'http://www.geonode.org/map.pdf'}
+            'doc_url': 'https://www.smap.com.vn/map.pdf'}
 
         response = self.client.post(reverse('document_upload'), data=form_data)
         self.assertEqual(response.status_code, 302)
 
         d = Document.objects.get(title='SMap Map')
-        self.assertEqual(d.doc_url, 'http://www.geonode.org/map.pdf')
+        self.assertEqual(d.doc_url, 'https://www.smap.com.vn/map.pdf')
 
-        form_data['doc_url'] = 'http://www.geonode.org/mapz.pdf'
+        form_data['doc_url'] = 'https://www.smap.com.vn/mapz.pdf'
         response = self.client.post(
             reverse(
                 'document_replace',
@@ -196,7 +196,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
         self.assertEqual(response.status_code, 302)
 
         d = Document.objects.get(title='SMap Map')
-        self.assertEqual(d.doc_url, 'http://www.geonode.org/mapz.pdf')
+        self.assertEqual(d.doc_url, 'https://www.smap.com.vn/mapz.pdf')
 
     def test_upload_document_form(self):
         """
@@ -219,7 +219,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
         form_data = {
             'title': 'SMap Map',
             'permissions': '{"anonymous":"document_readonly","authenticated":"resourcebase_readwrite","users":[]}',
-            'doc_url': 'http://www.geonode.org/map.pdf'}
+            'doc_url': 'https://www.smap.com.vn/map.pdf'}
 
         form = DocumentCreateForm(data=form_data)
         self.assertTrue(form.is_valid())
@@ -248,7 +248,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
 
         # The form should raise a validation error when a url and file is
         # present.
-        form_data['doc_url'] = 'http://www.geonode.org/map.pdf'
+        form_data['doc_url'] = 'https://www.smap.com.vn/map.pdf'
         form = DocumentCreateForm(form_data, file_data)
         self.assertFalse(form.is_valid())
         self.assertTrue('__all__' in form.errors)

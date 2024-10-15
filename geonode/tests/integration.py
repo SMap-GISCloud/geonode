@@ -85,7 +85,7 @@ r"""
  --------------------
 
  1)
-  (http://docs.geonode.org/en/2.10.x/install/core/index.html?highlight=paver#run-geonode-for-the-first-time-in-debug-mode)
+  (https://giscloud.vn/en/2.10.x/install/core/index.html?highlight=paver#run-geonode-for-the-first-time-in-debug-mode)
 
   $ paver setup
 

@@ -35,12 +35,12 @@ class ManagementCommandsTestCase(APITestCase):
         self.admin = get_user_model().objects.create_superuser(
             username="admin",
             password="admin",
-            email="admin@geonode.org",
+            email="admin@smap.com.vn",
         )
         self.non_admin_user = get_user_model().objects.create_user(
             username="some_user",
             password="some_password",
-            email="some_user@geonode.org",
+            email="some_user@smap.com.vn",
         )
         self.client.force_authenticate(self.admin)
 
@@ -127,7 +127,7 @@ class JobRunnerTestCase(APITestCase):
         self.admin = get_user_model().objects.create_superuser(
             username="admin",
             password="admin",
-            email="admin@geonode.org",
+            email="admin@smap.com.vn",
         )
         self.job = ManagementCommandJob.objects.create(
             command="ping_mngmt_commands_http",
@@ -148,12 +148,12 @@ class ManagementCommandJobsTestCase(APITestCase):
         self.admin = get_user_model().objects.create_superuser(
             username="admin",
             password="admin",
-            email="admin@geonode.org",
+            email="admin@smap.com.vn",
         )
         self.non_admin_user = get_user_model().objects.create_user(
             username="some_user",
             password="some_password",
-            email="some_user@geonode.org",
+            email="some_user@smap.com.vn",
         )
         self.client.force_authenticate(self.admin)
 

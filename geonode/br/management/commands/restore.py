@@ -513,7 +513,7 @@ class Command(BaseCommand):
                 print("HINT: If you migrated from another site, do not forget to run the command 'migrate_baseurl' to fix Links")  # noqa
                 print(
                     " e.g.:  DJANGO_SETTINGS_MODULE=my_geonode.settings python manage.py migrate_baseurl "
-                    "--source-address=my-host-dev.geonode.org --target-address=my-host-prod.geonode.org"
+                    "--source-address=dev.giscloud.vn --target-address=giscloud.vn"
                 )
                 print("Restore finished.")
             finally:

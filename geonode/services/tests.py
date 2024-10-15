@@ -105,7 +105,7 @@ class ModuleFunctionsTestCase(StandardTestCase):
         cat.get_workspace.assert_called_with(mock_settings.CASCADE_WORKSPACE)
         cat.create_workspace.assert_called_with(
             mock_settings.CASCADE_WORKSPACE,
-            f"http://www.geonode.org/{mock_settings.CASCADE_WORKSPACE}"
+            f"https://www.smap.com.vn/{mock_settings.CASCADE_WORKSPACE}"
         )
 
     @mock.patch("geonode.services.serviceprocessors.get_available_service_types")

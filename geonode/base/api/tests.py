@@ -322,7 +322,7 @@ class BaseApiTests(APITestCase):
         try:
             user = get_user_model().objects.create_user(
                 username='user_test_delete',
-                email="user_test_delete@geonode.org",
+                email="user_test_delete@smap.com.vn",
                 password='user')
             url = reverse('users-detail', kwargs={'pk': user.pk})
             data = {'first_name': 'user'}
@@ -360,7 +360,7 @@ class BaseApiTests(APITestCase):
         try:
             user = get_user_model().objects.create_user(
                 username='user_test_delete',
-                email="user_test_delete@geonode.org",
+                email="user_test_delete@smap.com.vn",
                 password='user')
             url = reverse('users-detail', kwargs={'pk': user.pk})
             # Anonymous can read

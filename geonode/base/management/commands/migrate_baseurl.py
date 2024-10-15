@@ -62,7 +62,7 @@ class Command(BaseCommand):
         parser.add_argument(
             '--target-address',
             dest='target_address',
-            help='Target Address (the one to be changed e.g. http://my-public.geonode.org)')
+            help='Target Address (the one to be changed e.g. https://giscloud.vn)')
 
     def handle(self, **options):
         extend_features(connection)

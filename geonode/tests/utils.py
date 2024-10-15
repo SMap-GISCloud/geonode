@@ -95,7 +95,7 @@ class Client(DjangoTestClient):
     def _register_user(self):
         u, _ = get_user_model().objects.get_or_create(username=self.user)
         u.is_active = True
-        u.email = 'admin@geonode.org'
+        u.email = 'admin@smap.com.vn'
         u.set_password(self.passwd)
         u.save()
 
