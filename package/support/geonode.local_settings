@@ -163,7 +163,7 @@ UPLOADER = {
     ]
 }
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'vi'
 
 MEDIA_ROOT = '/var/www/geonode/uploaded'
 STATIC_ROOT = '/var/www/geonode/static/'
