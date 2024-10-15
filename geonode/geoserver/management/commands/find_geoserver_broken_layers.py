@@ -38,7 +38,7 @@ def is_gs_resource_valid(layer):
 
 
 class Command(BaseCommand):
-    help = 'Find GeoNode layers with a missing GeoServer resource'
+    help = 'Find SMap layers with a missing GeoServer resource'
 
     def add_arguments(self, parser):
         parser.add_argument(

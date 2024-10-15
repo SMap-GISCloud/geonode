@@ -127,7 +127,7 @@ class CatalogueTest(GeoNodeBaseTestSupport):
     @staticmethod
     def __request_factory_single(uuid):
         factory = RequestFactory()
-        url = "http://localhost:8000/catalogue/csw?request=GetRecordById"
+        url = "https://giscloud.vn/catalogue/csw?request=GetRecordById"
         url += f"&service=CSW&version=2.0.2&id={uuid}"
         url += "&outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&elementsetname=full"
         request = factory.get(url)
@@ -138,7 +138,7 @@ class CatalogueTest(GeoNodeBaseTestSupport):
     @staticmethod
     def __request_factory_multiple():
         factory = RequestFactory()
-        url = "http://localhost:8000/catalogue/csw/?request=GetRecords&service=CSW&version=2.0.2"
+        url = "https://giscloud.vn/catalogue/csw/?request=GetRecords&service=CSW&version=2.0.2"
         url += "&outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&elementsetname=full"
         url += "&typenames=gmd:MD_Metadata"
         request = factory.get(url)

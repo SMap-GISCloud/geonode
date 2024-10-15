@@ -36,7 +36,7 @@ parser = argparse.ArgumentParser()
 class Command(BaseCommand):
     help = (
         "Brings a data file or a directory full of data files into a"
-        " GeoNode site.  Layers are added to the Django database, the"
+        " SMap site.  Layers are added to the Django database, the"
         " GeoServer configuration, and the pycsw metadata index."
     )
 
@@ -55,7 +55,7 @@ class Command(BaseCommand):
             self.print_help('manage.py', 'importlayers')
             return
 
-        host = options.get("host") or "http://localhost:8000"
+        host = options.get("host") or "https://giscloud.vn"
         username = options.get("username") or "admin"
         password = options.get("password") or "admin"
 

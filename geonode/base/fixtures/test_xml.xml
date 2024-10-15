@@ -450,7 +450,7 @@
        <gco:Boolean>0</gco:Boolean>
      </gmd:includedWithDataset>
      <gmd:MD_FeatureCatalogueDescription>
-       <gmd:featureCatalogueCitation uuidref="7cfbc42c-efa7-431c-8daa-1399dff4cd19" xlink:href="http://localhost:8000/layers/geonode_data:geonode:test_layer/feature_catalogue"/>
+       <gmd:featureCatalogueCitation uuidref="7cfbc42c-efa7-431c-8daa-1399dff4cd19" xlink:href="https://giscloud.vn/layers/geonode_data:geonode:test_layer/feature_catalogue"/>
      </gmd:MD_FeatureCatalogueDescription>
      
    </gmd:contentInfo>
@@ -461,13 +461,13 @@
            <gmd:onLine>
              <gmd:CI_OnlineResource>
                <gmd:linkage>
-                   <gmd:URL>http://localhost:8000/layers/geonode_data:geonode:test_layer</gmd:URL>
+                   <gmd:URL>https://giscloud.vn/layers/geonode_data:geonode:test_layer</gmd:URL>
                </gmd:linkage>
                <gmd:protocol>
                  <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
                </gmd:protocol>
                <gmd:description>
-                 <gco:CharacterString>Online link to the 'test_layer' description on GeoNode</gco:CharacterString>
+                 <gco:CharacterString>Online link to the 'test_layer' description on SMap</gco:CharacterString>
                </gmd:description>
              </gmd:CI_OnlineResource>
            </gmd:onLine>
@@ -475,7 +475,7 @@
            <gmd:onLine>
              <gmd:CI_OnlineResource>
                <gmd:linkage>
-                 <gmd:URL>http://localhost:8000/download/62</gmd:URL>
+                 <gmd:URL>https://giscloud.vn/download/62</gmd:URL>
                </gmd:linkage>
                <gmd:protocol>
                  <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
@@ -726,7 +726,7 @@
        </gmd:scope>
        <gmd:lineage>
          <gmd:LI_Lineage>
-           <gmd:statement><gco:CharacterString>Created with GeoNode</gco:CharacterString></gmd:statement>
+           <gmd:statement><gco:CharacterString>Created with SMap</gco:CharacterString></gmd:statement>
          </gmd:LI_Lineage>
        </gmd:lineage>
      </gmd:DQ_DataQuality>

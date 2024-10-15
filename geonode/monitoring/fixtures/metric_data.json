@@ -47,7 +47,7 @@
       "service_type": 1,
       "active": true,
       "notes": null,
-      "url": "http://localhost:8000/"
+      "url": "https://giscloud.vn/"
     }
   },
   {
@@ -61,7 +61,7 @@
       "service_type": 3,
       "active": true,
       "notes": null,
-      "url": "http://localhost:8000/"
+      "url": "https://giscloud.vn/"
     }
   },
   {

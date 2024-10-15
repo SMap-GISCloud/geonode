@@ -7,7 +7,7 @@
   <p>
     {% blocktrans %}
       Here you can download all the layers of this map that
-      are hosted on this GeoNode.
+      are hosted on this SMap.
     {% endblocktrans %}
     <ul>
       {% for layer in downloadable_layers %} 
@@ -40,7 +40,7 @@
 	  {% if remote_layers %}
       {% blocktrans %}
         Finally, the map contains these layers which will not be downloaded
-        because they are not available directly from this GeoNode:
+        because they are not available directly from this SMap:
       {% endblocktrans %}
       <ul>
         {% for layer in remote_layers %} 

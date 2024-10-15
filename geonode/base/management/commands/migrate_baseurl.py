@@ -41,7 +41,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
 
-    help = 'Migrate GeoNode VM Base URL'
+    help = 'Migrate SMap VM Base URL'
 
     def add_arguments(self, parser):
 
@@ -78,7 +78,7 @@ class Command(BaseCommand):
 
         print(f"This will change all Maps, Layers, \
 Styles and Links Base URLs from [{source_address}] to [{target_address}].")
-        print("The operation may take some time, depending on the amount of Layer on GeoNode.")
+        print("The operation may take some time, depending on the amount of Layer on SMap.")
         message = 'You want to proceed?'
 
         if force_exec or helpers.confirm(prompt=message, resp=False):

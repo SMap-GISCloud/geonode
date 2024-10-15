@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('attribute', models.CharField(help_text='name of attribute as stored in shapefile/spatial database', max_length=255, null=True, verbose_name='attribute name')),
                 ('description', models.CharField(help_text='description of attribute to be used in metadata', max_length=255, null=True, verbose_name='attribute description', blank=True)),
-                ('attribute_label', models.CharField(help_text='title of attribute as displayed in GeoNode', max_length=255, null=True, verbose_name='attribute label', blank=True)),
+                ('attribute_label', models.CharField(help_text='title of attribute as displayed in SMap', max_length=255, null=True, verbose_name='attribute label', blank=True)),
                 ('attribute_type', models.CharField(default='xsd:string', help_text='the data type of the attribute (integer, string, geometry, etc)', max_length=50, verbose_name='attribute type')),
                 ('visible', models.BooleanField(default=True, help_text='specifies if the attribute should be displayed in identify results', verbose_name='visible?')),
                 ('display_order', models.IntegerField(default=1, help_text='specifies the order in which attribute should be displayed in identify results', verbose_name='display order')),

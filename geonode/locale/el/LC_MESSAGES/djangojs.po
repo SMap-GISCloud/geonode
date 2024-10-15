@@ -25,7 +25,7 @@
 # Simeon Taskaris <taskaris@augmentedream.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: GeoNode\n"
+"Project-Id-Version: SMap\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-07 15:01+0200\n"
 "PO-Revision-Date: 2019-07-19 12:32+0300\n"
@@ -262,7 +262,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due "
+" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due "
 "to a connection timeout. Consider using the management commands to import "
 "data!"
 msgstr ""
@@ -332,7 +332,7 @@ msgstr "Μεταφόρτωση SLD"
 msgid "Manage Styles"
 msgstr "Διαχειριστείτε Στυλ"
 
-msgid "Please wait until GeoNode finished configuring it!"
+msgid "Please wait until SMap finished configuring it!"
 msgstr ""
 
 msgid "The column %1 was renamed to %2 <br/>"

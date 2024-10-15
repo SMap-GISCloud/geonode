@@ -65,7 +65,7 @@ def prefix_xsl_line(req, id):
         return HttpResponse(msg, status=404)
 
     try:
-        # generate an XML document (GeoNode's default is ISO)
+        # generate an XML document (SMap's default is ISO)
         if resource.metadata_uploaded and resource.metadata_uploaded_preserve:
             md_doc = etree.tostring(dlxml.fromstring(resource.metadata_xml))
         else:

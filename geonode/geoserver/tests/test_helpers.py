@@ -108,7 +108,7 @@ class HelperTest(GeoNodeBaseTestSupport):
     @on_ogc_backend(geoserver.BACKEND_PACKAGE)
     def test_replace_callback(self):
         content = f"""<Layer>
-      <Title>GeoNode Local GeoServer</Title>
+      <Title>SMap Local GeoServer</Title>
       <Abstract>This is a description of your Web Map Server.</Abstract>
       <!--Limited list of EPSG projections:-->
       <CRS>EPSG:4326</CRS>

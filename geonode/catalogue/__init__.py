@@ -27,7 +27,7 @@ from importlib import import_module
 
 DEFAULT_CATALOGUE_ALIAS = 'default'
 
-# GeoNode uses this if the CATALOGUE setting is empty (None).
+# SMap uses this if the CATALOGUE setting is empty (None).
 if not hasattr(settings, 'CATALOGUE'):
     settings.CATALOGUE = {DEFAULT_CATALOGUE_ALIAS: 'geonode.backends.dummy'}
 
@@ -58,7 +58,7 @@ def load_backend(backend_name):
                          f"    {', '.join(backend_reprs)}\nError was: {e_user}")
             raise ImproperlyConfigured(error_msg)
         else:
-            # If there's some other error, this must be an error in GeoNode
+            # If there's some other error, this must be an error in SMap
             raise
 
 

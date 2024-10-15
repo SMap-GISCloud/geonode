@@ -44,11 +44,11 @@ def restore_notification(recipients: List, backup_file: str, backup_md5: str, ex
     if exception:
         subject = 'Geonode restore procedure FAILED.'
         message = f'Restoration of the backup file: "{backup_file}" (MD5 hash: {backup_md5}) on the ' \
-            f'GeoNode instance: {settings.SITEURL} FAILED with an exception: {exception}'
+            f'SMap instance: {settings.SITEURL} FAILED with an exception: {exception}'
     else:
         subject = 'Geonode restore procedure finished with SUCCESS.'
         message = f'Restoration of the backup file: "{backup_file}" (MD5 hash: {backup_md5}) on the ' \
-            f'GeoNode instance: {settings.SITEURL} was finished SUCCESSFULLY.'
+            f'SMap instance: {settings.SITEURL} was finished SUCCESSFULLY.'
 
     msg = EmailMessage(subject=subject, body=message, to=recipients)
     msg.send()

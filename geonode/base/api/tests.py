@@ -1244,7 +1244,7 @@ class BaseApiTests(APITestCase):
         """
         Given a logged User and an existing dataset, should create the expected thumbnail url.
         """
-        mock_create_thumbnail.return_value = "http://localhost:8000/mocked_url.jpg"
+        mock_create_thumbnail.return_value = "https://giscloud.vn/mocked_url.jpg"
         # Admin
         self.client.login(username="admin", password="admin")
         dataset_id = Layer.objects.first().resourcebase_ptr_id
@@ -1263,7 +1263,7 @@ class BaseApiTests(APITestCase):
         expected = {
             'message': 'Thumbnail correctly created.',
             'success': True,
-            'thumbnail_url': 'http://localhost:8000/mocked_url.jpg'
+            'thumbnail_url': 'https://giscloud.vn/mocked_url.jpg'
         }
         self.assertEqual(response.status_code, 200)
         self.assertEqual(expected, response.json())

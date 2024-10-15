@@ -38,7 +38,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
 
-    help = 'Import a remote map service into GeoNode'
+    help = 'Import a remote map service into SMap'
 
     def add_arguments(self, parser):
 

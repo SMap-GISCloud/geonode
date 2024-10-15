@@ -735,9 +735,9 @@ class LayerTests(GeoNodeBaseTestSupport):
         self.assertIsNotNone(access_token)
 
         # Check that, if we have been authorized through the "access_token",
-        # we can still update a style no more present on GeoNode
+        # we can still update a style no more present on SMap
         # ref: 05b000cdb06b0b6e9b72bd9eb8a8e03abeb204a8
-        #  [Regression] "style_change_check" always fails in the case the style does not exist on GeoNode too, preventing a user editing temporary generated styles
+        #  [Regression] "style_change_check" always fails in the case the style does not exist on SMap too, preventing a user editing temporary generated styles
         Style.objects.filter(name=layer.name).delete()
 
         authorized = style_change_check(put_request, downstream_path, style_name='styles', access_token=access_token)
@@ -940,7 +940,7 @@ class UtilsTests(GeoNodeBaseTestSupport):
         with override_settings(OGC_SERVER=self.OGC_DEFAULT_SETTINGS, UPLOADER=self.UPLOADER_DEFAULT_SETTINGS):
             OGC_SERVER = self.OGC_DEFAULT_SETTINGS.copy()
             OGC_SERVER.update(
-                {'PUBLIC_LOCATION': 'http://geoserver:8080/geoserver/'})
+                {'PUBLIC_LOCATION': 'https://giscloud.vn/geoserver/'})
 
             ogc_settings = OGC_Servers_Handler(OGC_SERVER)['default']
 

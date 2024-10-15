@@ -32,7 +32,7 @@ from geonode.utils import check_ogc_backend
 
 
 class GeoNodeAuthorization(DjangoAuthorization):
-    """Object level API authorization based on GeoNode granular
+    """Object level API authorization based on SMap granular
     permission system"""
 
     def read_list(self, object_list, bundle):
@@ -122,7 +122,7 @@ class GeonodeApiKeyAuthentication(ApiKeyAuthentication):
 
 
 class GeoNodeStyleAuthorization(GeoNodeAuthorization):
-    """Object level API authorization based on GeoNode granular
+    """Object level API authorization based on SMap granular
     permission system
 
     Style object permissions should follow it's layer permissions

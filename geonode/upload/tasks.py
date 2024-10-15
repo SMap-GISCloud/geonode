@@ -187,17 +187,17 @@ def _update_upload_session_state(self, upload_session_id: int):
 
                     if _success:
                         if _tasks_failed:
-                            # GeoNode Layer creation errored!
+                            # SMap Layer creation errored!
                             _upload.set_processing_state(Upload.STATE_INVALID)
                         elif 'upload/final' not in _redirect_to and 'upload/check' not in _redirect_to and (_tasks_waiting or _upload.get_session.time):
                             _upload.set_resume_url(_redirect_to)
                             _upload.set_processing_state(Upload.STATE_WAITING)
                         elif session.state in (Upload.STATE_PENDING, Upload.STATE_RUNNING) and not (_tasks_waiting or _tasks_ready):
                             if _upload.layer and not _upload.layer.processed:
-                                # GeoNode Layer updating...
+                                # SMap Layer updating...
                                 _upload.set_processing_state(Upload.STATE_RUNNING)
                             elif session.state == Upload.STATE_RUNNING and _upload.layer and _upload.layer.processed:
-                                # GeoNode Layer successfully processed...
+                                # SMap Layer successfully processed...
                                 _upload.set_processing_state(Upload.STATE_PROCESSED)
                         elif (session.state == Upload.STATE_COMPLETE and _upload.state in (
                                 Upload.STATE_COMPLETE, Upload.STATE_PENDING) and not _tasks_waiting) or (
@@ -207,7 +207,7 @@ def _update_upload_session_state(self, upload_session_id: int):
                                 if _response:
                                     _upload.refresh_from_db()
                                     if _upload.state not in (Upload.STATE_PROCESSED, Upload.STATE_RUNNING) and not _upload.layer:
-                                        # GeoNode Layer still updating...
+                                        # SMap Layer still updating...
                                         _upload.set_processing_state(Upload.STATE_RUNNING)
                         logger.debug(f"Upload {upload_session_id} updated with state {_upload.state}.")
                 except (NotFound, Exception) as e:

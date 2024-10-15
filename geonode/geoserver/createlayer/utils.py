@@ -37,12 +37,12 @@ from geonode.geoserver.helpers import (
 logger = logging.getLogger(__name__)
 
 BBOX = [-180, 180, -90, 90]
-DATA_QUALITY_MESSAGE = "Created with GeoNode"
+DATA_QUALITY_MESSAGE = "Created with SMap"
 
 
 def create_layer(name, title, owner_name, geometry_type, attributes=None):
     """
-    Create an empty layer in GeoServer and register it in GeoNode.
+    Create an empty layer in GeoServer and register it in SMap.
     """
     # first validate parameters
     if geometry_type not in ('Point', 'LineString', 'Polygon'):
@@ -53,13 +53,13 @@ def create_layer(name, title, owner_name, geometry_type, attributes=None):
     # we can proceed
     logger.debug('Creating the layer in GeoServer')
     workspace, datastore = create_gs_layer(name, title, geometry_type, attributes)
-    logger.debug('Creating the layer in GeoNode')
+    logger.debug('Creating the layer in SMap')
     return create_gn_layer(workspace, datastore, name, title, owner_name)
 
 
 def create_gn_layer(workspace, datastore, name, title, owner_name):
     """
-    Associate a layer in GeoNode for a given layer in GeoServer.
+    Associate a layer in SMap for a given layer in GeoServer.
     """
     owner = get_user_model().objects.get(username=owner_name)
 

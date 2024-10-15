@@ -24,7 +24,7 @@ from geonode.geoserver.createlayer.utils import create_layer
 
 
 class Command(BaseCommand):
-    help = "Create an empty PostGIS vector layer in GeoNode."
+    help = "Create an empty PostGIS vector layer in SMap."
 
     def add_arguments(self, parser):
         # positional arguments

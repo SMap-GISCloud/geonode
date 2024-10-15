@@ -78,7 +78,7 @@ urlpatterns = [
     url(r'^', include('geonode.layers.api.urls')),
 ]
 
-# -- Deprecated url routes for Geoserver authentication -- remove after GeoNode 2.1
+# -- Deprecated url routes for Geoserver authentication -- remove after SMap 2.1
 # -- Use /gs/acls, gs/resolve_user/, gs/download instead
 if check_ogc_backend(geoserver.BACKEND_PACKAGE):
     from geonode.geoserver.views import layer_acls, resolve_user

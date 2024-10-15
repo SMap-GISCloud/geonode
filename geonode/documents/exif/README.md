@@ -1,6 +1,6 @@
 # Exit App Plugin
 
-Exif is a contrib app starting with GeoNode 2.4.
+Exif is a contrib app starting with SMap 2.4.
 The exif contrib app extracts exif metadata from uploaded JPEG documents.
 This contrib app helps automatically fill key metadata gaps, such as the date a picture was taken.
 If a document has exif metadata, the exif metadata is visible on a new tab on the document detail page.

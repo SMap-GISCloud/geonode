@@ -31,7 +31,7 @@ STATIC_ROOT = os.getenv('STATIC_ROOT', os.path.join(PROJECT_ROOT, "static_root")
 
 SECRET_KEY = 'qM-??jCGzC46L$wd'
 
-SITEURL = "http://localhost:8000/"
+SITEURL = "https://giscloud.vn/"
 
 # we need hostname for deployed
 _surl = urlparse(SITEURL)

@@ -158,7 +158,7 @@ def geoserver_upload(
             workspace=workspace)
 
     if not gs_resource:
-        msg = f'GeoNode encountered problems when creating layer {name}.It cannot find the Layer that matches this Workspace.try renaming your files.'
+        msg = f'SMap encountered problems when creating layer {name}.It cannot find the Layer that matches this Workspace.try renaming your files.'
         logger.warn(msg)
         raise GeoNodeException(msg)
 

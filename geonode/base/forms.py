@@ -449,7 +449,7 @@ class ResourceBaseForm(TranslationModelForm):
     )
 
     poc = forms.ModelChoiceField(
-        empty_label=_("Person outside GeoNode (fill form)"),
+        empty_label=_("Person outside SMap (fill form)"),
         label=_("Point of Contact"),
         required=False,
         queryset=get_user_model().objects.exclude(
@@ -457,7 +457,7 @@ class ResourceBaseForm(TranslationModelForm):
         widget=autocomplete.ModelSelect2(url='autocomplete_profile'))
 
     metadata_author = forms.ModelChoiceField(
-        empty_label=_("Person outside GeoNode (fill form)"),
+        empty_label=_("Person outside SMap (fill form)"),
         label=_("Metadata Author"),
         required=False,
         queryset=get_user_model().objects.exclude(

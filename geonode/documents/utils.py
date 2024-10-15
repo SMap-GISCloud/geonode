@@ -17,7 +17,7 @@
 #
 #########################################################################
 
-"""Utilities for managing GeoNode documents
+"""Utilities for managing SMap documents
 """
 
 # Standard Modules

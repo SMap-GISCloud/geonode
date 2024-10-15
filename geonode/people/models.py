@@ -206,7 +206,7 @@ class Profile(AbstractUser):
             group_perms = Permission.objects.filter(
                 group__name__in=user_groups
             ).distinct().values_list('codename', flat=True)
-            # return constant names defined by GeoNode
+            # return constant names defined by SMap
             perms = [PERMISSIONS[db_perm] for db_perm in group_perms]
 
         # check READ_ONLY mode

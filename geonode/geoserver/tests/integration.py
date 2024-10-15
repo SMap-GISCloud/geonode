@@ -59,7 +59,7 @@ def _log(msg, *args):
 class GeoNodeGeoServerSync(GeoNodeLiveTestSupport):
 
     """
-    Tests GeoNode/GeoServer syncronization
+    Tests SMap/GeoServer syncronization
     """
     port = 8001
 
@@ -117,7 +117,7 @@ class GeoNodeGeoServerSync(GeoNodeLiveTestSupport):
 class GeoNodeGeoServerCapabilities(GeoNodeLiveTestSupport):
 
     """
-    Tests GeoNode/GeoServer GetCapabilities per layer, user, category and map
+    Tests SMap/GeoServer GetCapabilities per layer, user, category and map
     """
     port = 8002
 
@@ -232,7 +232,7 @@ class GeoNodeGeoServerCapabilities(GeoNodeLiveTestSupport):
 @override_settings(SITEURL='http://localhost:8003/')
 class GeoNodePermissionsTest(GeoNodeLiveTestSupport):
     """
-    Tests GeoNode permissions and its integration with GeoServer
+    Tests SMap permissions and its integration with GeoServer
     """
     port = 8003
 

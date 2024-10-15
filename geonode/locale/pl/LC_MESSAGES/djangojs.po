@@ -22,7 +22,7 @@
 # Andres Alfonso Lemon Gomez <lemon.andres@gmail.com>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: GeoNode\n"
+"Project-Id-Version: SMap\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-07 15:01+0200\n"
 "PO-Revision-Date: 2020-08-20 14:38+0200\n"
@@ -260,7 +260,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due "
+" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due "
 "to a connection timeout. Consider using the management commands to import "
 "data!"
 msgstr ""
@@ -330,7 +330,7 @@ msgstr "Prześlij plik SLD"
 msgid "Manage Styles"
 msgstr "Zarządzanie stylami"
 
-msgid "Please wait until GeoNode finished configuring it!"
+msgid "Please wait until SMap finished configuring it!"
 msgstr ""
 
 msgid "The column %1 was renamed to %2 <br/>"
@@ -603,19 +603,19 @@ msgstr ""
 #~ msgid "Not provided."
 #~ msgstr "Nie podano."
 
-#~ msgid "GeoNode site admin"
-#~ msgstr "Administrator serwisu GeoNode"
+#~ msgid "SMap site admin"
+#~ msgstr "Administrator serwisu SMap"
 
-#~ msgid "GeoNode administration"
-#~ msgstr "Administracja GeoNode"
+#~ msgid "SMap administration"
+#~ msgstr "Administracja SMap"
 
 #~ msgid "Welcome"
 #~ msgstr "Witamy"
 
 #~ msgid ""
-#~ "GeoNode is an open source platform for sharing geospatial data and maps."
+#~ "SMap is an open source platform for sharing geospatial data and maps."
 #~ msgstr ""
-#~ "GeoNode to platforma open source do udostępniania map i danych "
+#~ "SMap to platforma open source do udostępniania map i danych "
 #~ "geoprzestrzennych."
 
 #~ msgid "Get Started &raquo;"

@@ -17,7 +17,7 @@
 #
 #########################################################################
 
-# Django settings for the GeoNode project.
+# Django settings for the SMap project.
 import os
 import re
 import ast
@@ -48,7 +48,7 @@ SILENCED_SYSTEM_CHECKS = [
     'drf_spectacular.W002'
 ]
 
-# GeoNode Version
+# SMap Version
 VERSION = get_version()
 
 DEFAULT_CHARSET = "utf-8"
@@ -68,7 +68,7 @@ DEBUG_STATIC = ast.literal_eval(os.getenv('DEBUG_STATIC', 'False'))
 
 FORCE_SCRIPT_NAME = os.getenv('FORCE_SCRIPT_NAME', '')
 
-# Define email service on GeoNode
+# Define email service on SMap
 EMAIL_ENABLE = ast.literal_eval(os.getenv('EMAIL_ENABLE', 'False'))
 
 if EMAIL_ENABLE:
@@ -80,7 +80,7 @@ if EMAIL_ENABLE:
     EMAIL_HOST_PASSWORD = os.getenv('DJANGO_EMAIL_HOST_PASSWORD', '')
     EMAIL_USE_TLS = ast.literal_eval(os.getenv('DJANGO_EMAIL_USE_TLS', 'False'))
     EMAIL_USE_SSL = ast.literal_eval(os.getenv('DJANGO_EMAIL_USE_SSL', 'False'))
-    DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'GeoNode <no-reply@geonode.org>')
+    DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'SMap <no-reply@geonode.org>')
 else:
     EMAIL_BACKEND = os.getenv('DJANGO_EMAIL_BACKEND',
                               default='django.core.mail.backends.console.EmailBackend')
@@ -409,7 +409,7 @@ if MEMCACHED_ENABLED:
     }
 
 GEONODE_CORE_APPS = (
-    # GeoNode internal apps
+    # SMap internal apps
     'geonode.api',
     'geonode.base',
     'geonode.br',
@@ -422,13 +422,13 @@ GEONODE_CORE_APPS = (
     'geonode.catalogue.metadataxsl',
 )
 
-# GeoNode Apps
+# SMap Apps
 GEONODE_APPS_ENABLE = ast.literal_eval(os.getenv("GEONODE_APPS_ENABLE", "True"))
 GEONODE_APPS_NAME = os.getenv("GEONODE_APPS_NAME", "Apps")
 GEONODE_APPS_NAV_MENU_ENABLE = ast.literal_eval(os.getenv("GEONODE_APPS_NAV_MENU_ENABLE", "True"))
 
 GEONODE_INTERNAL_APPS = (
-    # GeoNode internal apps
+    # SMap internal apps
     'geonode.people',
     'geonode.client',
     'geonode.themes',
@@ -450,7 +450,7 @@ GEONODE_INTERNAL_APPS = (
 )
 
 GEONODE_CONTRIB_APPS = (
-    # GeoNode Contrib Apps
+    # SMap Contrib Apps
 )
 
 # Uncomment the following line to enable contrib apps
@@ -523,7 +523,7 @@ INSTALLED_APPS = (
     'allauth.account',
     'allauth.socialaccount',
 
-    # GeoNode
+    # SMap
     'geonode',
 )
 
@@ -608,7 +608,7 @@ DYNAMIC_REST = {
     'ENABLE_HOST_RELATIVE_LINKS': True
 }
 
-GRAPPELLI_ADMIN_TITLE = os.getenv('GRAPPELLI_ADMIN_TITLE', 'GeoNode')
+GRAPPELLI_ADMIN_TITLE = os.getenv('GRAPPELLI_ADMIN_TITLE', 'SMap')
 
 # Documents application
 try:
@@ -705,7 +705,7 @@ TEST_RUNNER = 'geonode.tests.suite.runner.GeoNodeBaseSuiteDiscoverRunner'
 TEST_RUNNER_KEEPDB = os.environ.get('TEST_RUNNER_KEEPDB', 0)
 TEST_RUNNER_PARALLEL = os.environ.get('TEST_RUNNER_PARALLEL', 1)
 
-# GeoNode test suite
+# SMap test suite
 # TEST_RUNNER = 'geonode.tests.suite.runner.DjangoParallelTestSuiteRunner'
 # TEST_RUNNER_WORKER_MAX = 3
 # TEST_RUNNER_WORKER_COUNT = 'auto'
@@ -717,7 +717,7 @@ TEST = 'test' in sys.argv
 INTEGRATION = 'geonode.tests.integration' in sys.argv
 
 #
-# Customizations to built in Django settings required by GeoNode
+# Customizations to built in Django settings required by SMap
 #
 
 # Django automatically includes the "templates" dir in all the INSTALLED_APPS.
@@ -739,7 +739,7 @@ if 'geonode.geoserver' in INSTALLED_APPS:
 
 TEMPLATES = [
     {
-        'NAME': 'GeoNode Project Templates',
+        'NAME': 'SMap Project Templates',
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(PROJECT_ROOT, "templates")],
         'APP_DIRS': True,
@@ -865,7 +865,7 @@ LOCKDOWN_GEONODE = ast.literal_eval(os.getenv('LOCKDOWN_GEONODE', 'False'))
 
 # Add additional paths (as regular expressions) that don't require
 # authentication.
-# - authorized exempt urls needed for oauth when GeoNode is set to lockdown
+# - authorized exempt urls needed for oauth when SMap is set to lockdown
 AUTH_EXEMPT_URLS = (
     r'^%s/?$' % FORCE_SCRIPT_NAME,
     f'{FORCE_SCRIPT_NAME}/o/*',
@@ -937,7 +937,7 @@ THEME_ACCOUNT_CONTACT_EMAIL = os.getenv(
 )
 
 #
-# GeoNode specific settings
+# SMap specific settings
 #
 # per-deployment settings should go here
 
@@ -1093,13 +1093,13 @@ EPSG_CODE_MATCHES = {
 CATALOGUE = {
     'default': {
         # The underlying CSW implementation
-        # default is pycsw in local mode (tied directly to GeoNode Django DB)
+        # default is pycsw in local mode (tied directly to SMap Django DB)
         'ENGINE': 'geonode.catalogue.backends.pycsw_local',
         # pycsw in non-local mode
         # 'ENGINE': 'geonode.catalogue.backends.pycsw_http',
         # deegree and others
         # 'ENGINE': 'geonode.catalogue.backends.generic',
-        # The FULLY QUALIFIED base url to the CSW instance for this GeoNode
+        # The FULLY QUALIFIED base url to the CSW instance for this SMap
         'URL': urljoin(SITEURL, '/catalogue/csw'),
         # 'URL': 'http://localhost:8080/geonetwork/srv/en/csw',
         # 'URL': 'http://localhost:8080/deegree-csw-demo-3.0.4/services',
@@ -1135,12 +1135,12 @@ PYCSW = {
             # 'csw_harvest_pagesize': '10',
         },
         'metadata:main': {
-            'identification_title': 'GeoNode Catalogue',
-            'identification_abstract': 'GeoNode is an open source platform' \
+            'identification_title': 'SMap Catalogue',
+            'identification_abstract': 'SMap is an open source platform' \
             ' that facilitates the creation, sharing, and collaborative use' \
             ' of geospatial data',
             'identification_keywords': 'sdi, catalogue, discovery, metadata,' \
-            ' GeoNode',
+            ' SMap',
             'identification_keywords_type': 'theme',
             'identification_fees': 'None',
             'identification_accessconstraints': 'None',
@@ -1210,9 +1210,9 @@ CKAN_ORIGINS = [{
 
 # Setting TWITTER_CARD to True will enable Twitter Cards
 # https://dev.twitter.com/cards/getting-started
-# Be sure to replace @GeoNode with your organization or site's twitter handle.
+# Be sure to replace @SMap with your organization or site's twitter handle.
 TWITTER_CARD = ast.literal_eval(os.getenv('TWITTER_CARD', 'True'))
-TWITTER_SITE = '@GeoNode'
+TWITTER_SITE = '@SMap'
 TWITTER_HASHTAGS = ['geonode']
 
 OPENGRAPH_ENABLED = ast.literal_eval(os.getenv('OPENGRAPH_ENABLED', 'True'))
@@ -1346,7 +1346,7 @@ except ValueError:
     ) if os.getenv('AVATAR_PROVIDERS') is None \
         else re.split(r' *[,|:|;] *', os.getenv('AVATAR_PROVIDERS'))
 
-# Number of results per page listed in the GeoNode search pages
+# Number of results per page listed in the SMap search pages
 CLIENT_RESULTS_LIMIT = int(os.getenv('CLIENT_RESULTS_LIMIT', '5'))
 
 # LOCKDOWN API endpoints to prevent unauthenticated access.
@@ -1396,7 +1396,7 @@ GEONODE_CATALOGUE_METADATA_XSL = ast.literal_eval(os.getenv('GEONODE_CATALOGUE_M
 
 # -- START Client Hooksets Setup
 
-# GeoNode javascript client configuration
+# SMap javascript client configuration
 
 # default map projection
 # Note: If set to EPSG:4326, then only EPSG:4326 basemaps will work.

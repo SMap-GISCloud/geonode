@@ -37,7 +37,7 @@ class ThemeLibraryTest(GeoNodeBaseTestSupport):
         logger.error("WARNING: different for 3.2.x and 3.1.x")
         if __version__[0] == 3 and (__version__[1] == 1 or (__version__[1] == 2 and __version__[3] != 'unstable')):
             self.assertContains(
-                response, "GeoNode is an open source platform for sharing geospatial data and maps.")
+                response, "SMap is an open source platform for sharing geospatial data and maps.")
             # Creating a theme should change the welcome text
             GeoNodeThemeCustomization.objects.create(
                 name='theme_1',
@@ -46,7 +46,7 @@ class ThemeLibraryTest(GeoNodeBaseTestSupport):
             )
             response = self.client.get('/')
             self.assertNotContains(
-                response, "GeoNode is an open source platform for sharing geospatial data and maps.")
+                response, "SMap is an open source platform for sharing geospatial data and maps.")
             self.assertContains(response, "welcome_1")
 
             # Creating another theme should replace the welcome text
@@ -96,4 +96,4 @@ class ThemeLibraryTest(GeoNodeBaseTestSupport):
             theme_3.delete()
             response = self.client.get('/')
             self.assertNotContains(response, "welcome_3")
-            self.assertContains(response, "GeoNode is an open source platform for sharing geospatial data and maps.")
+            self.assertContains(response, "SMap is an open source platform for sharing geospatial data and maps.")

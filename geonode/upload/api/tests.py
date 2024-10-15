@@ -132,7 +132,7 @@ class UploadApiTests(GeoNodeLiveTestSupport, APITestCase):
         self.selenium.find_element_by_xpath(selector).click()
 
     def do_login(self, username=GEONODE_USER, password=GEONODE_PASSWD):
-        """ Method to login the GeoNode site"""
+        """ Method to login the SMap site"""
         assert authenticate(username=username, password=password)
         self.assertTrue(self.client.login(username=username, password=password))  # Native django test client
 
@@ -190,7 +190,7 @@ class UploadApiTests(GeoNodeLiveTestSupport, APITestCase):
 
     def live_upload_file(self, _file):
         """ function that uploads a file, or a collection of files, to
-        the GeoNode"""
+        the SMap"""
         spatial_files = ("dbf_file", "shx_file", "prj_file")
         base, ext = os.path.splitext(_file)
         params = {
@@ -257,7 +257,7 @@ class UploadApiTests(GeoNodeLiveTestSupport, APITestCase):
 
     def rest_upload_by_path(self, _file, username=GEONODE_USER, password=GEONODE_PASSWD, non_interactive=False):
         """ function that uploads a file, or a collection of files, to
-        the GeoNode"""
+        the SMap"""
         assert authenticate(username=username, password=password)
         self.assertTrue(self.client.login(username=username, password=password))
         spatial_files = ("dbf_file", "shx_file", "prj_file")
@@ -315,7 +315,7 @@ class UploadApiTests(GeoNodeLiveTestSupport, APITestCase):
 
     def rest_upload_file_by_path(self, _file, username=GEONODE_USER, password=GEONODE_PASSWD):
         """ function that uploads a file, or a collection of files, to
-        the GeoNode"""
+        the SMap"""
         assert authenticate(username=username, password=password)
         self.assertTrue(self.client.login(username=username, password=password))
         spatial_files = ("dbf_file_path", "shx_file_path", "prj_file_path")

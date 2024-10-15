@@ -96,12 +96,12 @@ class MapsTest(GeoNodeBaseTestSupport):
         self.not_admin.set_password('very-secret')
         self.not_admin.save()
 
-    default_abstract = "This is a demonstration of GeoNode, an application \
+    default_abstract = "This is a demonstration of SMap, an application \
 for assembling and publishing web based maps.  After adding layers to the map, \
-use the Save Map button above to contribute your map to the GeoNode \
+use the Save Map button above to contribute your map to the SMap \
 community."
 
-    default_title = "GeoNode Default Map"
+    default_title = "SMap Default Map"
 
     # This is a valid map viewer config, based on the sample data provided
     # by andreas in issue 566. -dwins
@@ -240,8 +240,8 @@ community."
         cfg = json.loads(content)
         self.assertEqual(
             cfg["about"]["abstract"],
-            'GeoNode default map abstract')
-        self.assertEqual(cfg["about"]["title"], 'GeoNode Default Map')
+            'SMap default map abstract')
+        self.assertEqual(cfg["about"]["title"], 'SMap Default Map')
         self.assertEqual(len(cfg["map"]["layers"]), 5)
 
     def test_map_to_json(self):
@@ -251,8 +251,8 @@ community."
         cfg = map_obj.viewer_json(None)
         self.assertEqual(
             cfg['about']['abstract'],
-            'GeoNode default map abstract')
-        self.assertEqual(cfg['about']['title'], 'GeoNode Default Map')
+            'SMap default map abstract')
+        self.assertEqual(cfg['about']['title'], 'SMap Default Map')
 
         def is_wms_layer(x):
             if 'source' in x:
@@ -281,10 +281,10 @@ community."
         abstract = f'{ns}General/{ns}Abstract'
 
         self.assertIsNotNone(wmc.attrib.get('id'))
-        self.assertEqual(wmc.find(title).text, 'GeoNode Default Map')
+        self.assertEqual(wmc.find(title).text, 'SMap Default Map')
         self.assertEqual(
             wmc.find(abstract).text,
-            'GeoNode default map abstract')
+            'SMap default map abstract')
 
     def test_newmap_to_json(self):
         """ Make some assertions about the data structure produced for serialization

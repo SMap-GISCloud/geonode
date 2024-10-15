@@ -986,7 +986,7 @@ class TestServiceViews(GeoNodeBaseTestSupport):
         elems = get_available_service_types()
         expected = {
             'WMS': {'OWS': True, 'handler': WmsServiceHandler, 'label': 'Web Map Service'},
-            'GN_WMS': {'OWS': True, 'handler': GeoNodeServiceHandler, 'label': 'GeoNode (Web Map Service)'},
+            'GN_WMS': {'OWS': True, 'handler': GeoNodeServiceHandler, 'label': 'SMap (Web Map Service)'},
             'REST_MAP': {'OWS': False, 'handler': ArcMapServiceHandler, 'label': 'ArcGIS REST MapServer'},
             'REST_IMG': {'OWS': False, 'handler': ArcImageServiceHandler, 'label': 'ArcGIS REST ImageServer'},
             'test': {'OWS': True, 'handler': 'TestHandler', 'label': 'Test Number 1', 'management_view': 'path.to.view1'},

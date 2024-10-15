@@ -28,7 +28,7 @@
 # Toni Schönbuchner <toni.schoenbuchner@csgis.de>, 2019
 msgid ""
 msgstr ""
-"Project-Id-Version: GeoNode\n"
+"Project-Id-Version: SMap\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-07 15:01+0200\n"
 "PO-Revision-Date: 2020-12-08 16:02+0100\n"
@@ -312,11 +312,11 @@ msgstr ""
 "zum Beispiel wegen Überlastung oder Wartungsarbeiten."
 
 msgid ""
-" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due "
+" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due "
 "to a connection timeout. Consider using the management commands to import "
 "data!"
 msgstr ""
-" - 504 Gateway Timeout. GeoNode hat die Verbindung zum GeoServer oder der "
+" - 504 Gateway Timeout. SMap hat die Verbindung zum GeoServer oder der "
 "Datenbank verloren. Möglicherweise kann ein Import auch über die Management-"
 "Kommandos erfolgen."
 
@@ -400,7 +400,7 @@ msgstr "SLD hochladen"
 msgid "Manage Styles"
 msgstr "Stilverwaltung"
 
-msgid "Please wait until GeoNode finished configuring it!"
+msgid "Please wait until SMap finished configuring it!"
 msgstr ""
 
 msgid "The column %1 was renamed to %2 <br/>"

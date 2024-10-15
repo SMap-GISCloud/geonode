@@ -611,7 +611,7 @@ def gs_slurp(
         remove_deleted=False,
         permissions=None,
         execute_signals=False):
-    """Configure the layers available in GeoServer in GeoNode.
+    """Configure the layers available in GeoServer in SMap.
        It returns a list of dictionaries with the name of the layer,
        the result of the operation and the errors and traceback if it failed.
     """
@@ -648,7 +648,7 @@ def gs_slurp(
     if remove_deleted:
         resources_for_delete_compare = resources[:]
         workspace_for_delete_compare = workspace
-        # filter out layers for delete comparison with GeoNode layers by following criteria:
+        # filter out layers for delete comparison with SMap layers by following criteria:
         # enabled = true, if --skip-unadvertised: advertised = true, but
         # disregard the filter parameter in the case of deleting layers
         try:
@@ -701,7 +701,7 @@ def gs_slurp(
                 raise
 
     # TODO: Should we do something with these?
-    # i.e. look for matching layers in GeoNode and also disable?
+    # i.e. look for matching layers in SMap and also disable?
     # disabled_resources = [k for k in resources if k.enabled == "false"]
 
     number = len(resources)
@@ -839,16 +839,16 @@ def gs_slurp(
             else:
                 q = q.filter(store__exact=store)
         logger.debug("Executing 'remove_deleted' logic")
-        logger.debug("GeoNode Layers Found:")
+        logger.debug("SMap Layers Found:")
 
-        # compare the list of GeoNode layers obtained via query/filter with valid resources found in GeoServer
+        # compare the list of SMap layers obtained via query/filter with valid resources found in GeoServer
         # filtered per options passed to updatelayers: --workspace, --store, --skip-unadvertised
         # add any layers not found in GeoServer to deleted_layers (must match
         # workspace and store as well):
         deleted_layers = []
         for layer in q:
             logger.debug(
-                "GeoNode Layer info: name: %s, workspace: %s, store: %s",
+                "SMap Layer info: name: %s, workspace: %s, store: %s",
                 layer.name,
                 layer.workspace,
                 layer.store)
@@ -878,7 +878,7 @@ def gs_slurp(
 
         for i, layer in enumerate(deleted_layers):
             logger.debug(
-                "GeoNode Layer to delete: name: %s, workspace: %s, store: %s",
+                "SMap Layer to delete: name: %s, workspace: %s, store: %s",
                 layer.name,
                 layer.workspace,
                 layer.store)
@@ -1023,7 +1023,7 @@ def set_attributes(
 def set_attributes_from_geoserver(layer, overwrite=False):
     """
     Retrieve layer attribute names & types from Geoserver,
-    then store in GeoNode database using Attribute model
+    then store in SMap database using Attribute model
     """
     attribute_map = []
     if getattr(layer, 'remote_service') and layer.remote_service:
@@ -1934,7 +1934,7 @@ def _dump_image_spec(request_body, image_spec):
 
 
 def mosaic_delete_first_granule(cat, layer):
-    # - since GeoNode will uploade the first granule again through the Importer, we need to /
+    # - since SMap will uploade the first granule again through the Importer, we need to /
     #   delete the one created by the gs_config
     cat._cache.clear()
     store = cat.get_store(layer)
@@ -2514,7 +2514,7 @@ max\ connections={db_conn_max}"""
                 time_presentation_default_value,
                 time_presentation_reference_value)
 
-        # - since GeoNode will upload the first granule again through the Importer, we need to /
+        # - since SMap will upload the first granule again through the Importer, we need to /
         #   delete the one created by the gs_config
         # mosaic_delete_first_granule(cat, name)
         if len(spatial_files) > 1:

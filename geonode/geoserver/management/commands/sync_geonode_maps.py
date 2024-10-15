@@ -69,7 +69,7 @@ def sync_geonode_maps(ignore_errors,
 
 
 class Command(BaseCommand):
-    help = 'Update the GeoNode maps: permissions, thumbnails'
+    help = 'Update the SMap maps: permissions, thumbnails'
 
     def add_arguments(self, parser):
         parser.add_argument(

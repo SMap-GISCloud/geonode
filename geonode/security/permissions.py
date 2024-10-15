@@ -406,7 +406,7 @@ class PermSpec(PermSpecConverterBase):
 
          - The method also recognizes special/internal security groups, like 'anonymous' and 'registered-members' and places
            their permissions on a specific node called 'groups'.
-         - Every security group, different from the former ones, associated to a GeoNode 'GroupProfile', will be placed on a
+         - Every security group, different from the former ones, associated to a SMap 'GroupProfile', will be placed on a
            node called 'organizations' instead.
         e.g.:
 

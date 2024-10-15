@@ -455,7 +455,7 @@ class Attribute(models.Model):
         null=True)
     attribute_label = models.CharField(
         _('attribute label'),
-        help_text=_('title of attribute as displayed in GeoNode'),
+        help_text=_('title of attribute as displayed in SMap'),
         max_length=255,
         blank=True,
         null=True,

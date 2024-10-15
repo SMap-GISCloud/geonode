@@ -165,9 +165,9 @@ class DocumentsTest(GeoNodeBaseTestSupport):
             uuid=str(uuid4()),
             doc_url="http://geonode.org/map.pdf",
             owner=superuser,
-            title="GeoNode Map")
+            title="SMap Map")
         doc = Document.objects.get(pk=c.id)
-        self.assertEqual(doc.title, "GeoNode Map")
+        self.assertEqual(doc.title, "SMap Map")
         self.assertEqual(doc.extension, "pdf")
 
     def test_create_document_url_view(self):
@@ -176,14 +176,14 @@ class DocumentsTest(GeoNodeBaseTestSupport):
         """
         self.client.login(username='admin', password='admin')
         form_data = {
-            'title': 'GeoNode Map',
+            'title': 'SMap Map',
             'permissions': '{"users":{"AnonymousUser": ["view_resourcebase"]},"groups":{}}',
             'doc_url': 'http://www.geonode.org/map.pdf'}
 
         response = self.client.post(reverse('document_upload'), data=form_data)
         self.assertEqual(response.status_code, 302)
 
-        d = Document.objects.get(title='GeoNode Map')
+        d = Document.objects.get(title='SMap Map')
         self.assertEqual(d.doc_url, 'http://www.geonode.org/map.pdf')
 
         form_data['doc_url'] = 'http://www.geonode.org/mapz.pdf'
@@ -195,7 +195,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
             data=form_data)
         self.assertEqual(response.status_code, 302)
 
-        d = Document.objects.get(title='GeoNode Map')
+        d = Document.objects.get(title='SMap Map')
         self.assertEqual(d.doc_url, 'http://www.geonode.org/mapz.pdf')
 
     def test_upload_document_form(self):
@@ -217,7 +217,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
         self.assertTrue('__all__' in form.errors)
 
         form_data = {
-            'title': 'GeoNode Map',
+            'title': 'SMap Map',
             'permissions': '{"anonymous":"document_readonly","authenticated":"resourcebase_readwrite","users":[]}',
             'doc_url': 'http://www.geonode.org/map.pdf'}
 
@@ -234,7 +234,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
                 data=form_data).errors)
 
         form_data = {
-            'title': 'GeoNode Map',
+            'title': 'SMap Map',
             'permissions': '{"anonymous":"document_readonly","authenticated":"resourcebase_readwrite","users":[]}',
         }
 
@@ -255,7 +255,7 @@ class DocumentsTest(GeoNodeBaseTestSupport):
 
     def test_upload_document_form_size_limit(self):
         form_data = {
-            'title': 'GeoNode Map',
+            'title': 'SMap Map',
             'permissions': '{"anonymous":"document_readonly","authenticated":"resourcebase_readwrite","users":[]}',
         }
         test_file = SimpleUploadedFile(

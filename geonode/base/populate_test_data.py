@@ -76,7 +76,7 @@ def create_fixtures():
     world_extent = [-180, 180, -90, 90]
 
     map_data = [
-        ('GeoNode Default Map', 'GeoNode default map abstract', ('populartag',), world_extent, biota),
+        ('SMap Default Map', 'SMap default map abstract', ('populartag',), world_extent, biota),
         ('ipsum lorem', 'common ipsum lorem', ('populartag', 'maptagunique'), world_extent, biota),
         ('lorem1 ipsum1', 'common abstract1', ('populartag',), world_extent, biota),
         ('ipsum foo', 'common bar lorem', ('populartag',), world_extent, location),

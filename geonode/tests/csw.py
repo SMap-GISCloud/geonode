@@ -42,7 +42,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
     """Tests geonode.catalogue app/module"""
 
     def test_csw_base(self):
-        """Verify that GeoNode works against any CSW"""
+        """Verify that SMap works against any CSW"""
         csw = get_catalogue(
             backend={
                 'ENGINE': 'geonode.catalogue.backends.pycsw_local',
@@ -55,13 +55,13 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
             urljoin('http://localhost:8001/', '/catalogue/csw')
         )
 
-        # test that OGC:CSW URLs are identical to what is defined in GeoNode
+        # test that OGC:CSW URLs are identical to what is defined in SMap
         for op in csw.catalogue.operations:
             for method in op.methods:
                 self.assertEqual(
                     csw.catalogue.url,
                     method['url'],
-                    'Expected GeoNode URL to be equal to all CSW URLs')
+                    'Expected SMap URL to be equal to all CSW URLs')
 
         # test that OGC:CSW 2.0.2 is supported
         self.assertEqual(csw.catalogue.version, '2.0.2',
@@ -92,7 +92,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
             'Expected "http://www.isotc211.org/2005/gmd" to be a supported outputSchema value')
 
     def test_csw_search_count(self):
-        """Verify that GeoNode CSW can handle search counting"""
+        """Verify that SMap CSW can handle search counting"""
         csw = get_catalogue(
             backend={
                 'ENGINE': 'geonode.catalogue.backends.pycsw_local',
@@ -133,7 +133,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
                 ResourceBase.objects.filter(is_published=False).update(is_published=True)
 
     def test_csw_outputschema_dc(self):
-        """Verify that GeoNode CSW can handle ISO metadata with Dublin Core outputSchema"""
+        """Verify that SMap CSW can handle ISO metadata with Dublin Core outputSchema"""
 
         csw = get_catalogue()
 
@@ -164,7 +164,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
                         self.assertEqual(link['url'], f"{settings.GEOSERVER_PUBLIC_LOCATION}ows")
 
     def test_csw_outputschema_iso(self):
-        """Verify that GeoNode CSW can handle ISO metadata with ISO outputSchema"""
+        """Verify that SMap CSW can handle ISO metadata with ISO outputSchema"""
 
         csw = get_catalogue()
 
@@ -206,7 +206,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
                             'Expected a specific OGC:WFS URL')
 
     def test_csw_outputschema_dc_bbox(self):
-        """Verify that GeoNode CSW can handle ISO metadata BBOX model with Dublin Core outputSchema"""
+        """Verify that SMap CSW can handle ISO metadata BBOX model with Dublin Core outputSchema"""
         csw = get_catalogue()
         # search for 'san_andres_y_providencia_location', output as Dublin
         # Core
@@ -234,7 +234,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
             self.assertAlmostEqual(Decimal(record.bbox.maxy), Decimal('13.396306'), places=3)
 
     def test_csw_outputschema_fgdc(self):
-        """Verify that GeoNode CSW can handle ISO metadata with FGDC outputSchema"""
+        """Verify that SMap CSW can handle ISO metadata with FGDC outputSchema"""
         csw = get_catalogue()
         if csw.catalogue.type in {'pycsw_http', 'pycsw_local'}:
             # get all ISO records in FGDC schema
@@ -253,7 +253,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
                 self.assertEqual(record.idinfo.descript.abstract, 'No abstract provided')
 
     def test_csw_query_bbox(self):
-        """Verify that GeoNode CSW can handle bbox queries"""
+        """Verify that SMap CSW can handle bbox queries"""
 
         csw = get_catalogue()
         bbox = fes.BBox([-140, -70, 80, 70])
@@ -266,7 +266,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
             pass
 
     def test_csw_upload_fgdc(self):
-        """Verify that GeoNode CSW can handle FGDC metadata upload"""
+        """Verify that SMap CSW can handle FGDC metadata upload"""
         csw = get_catalogue()
         if csw.catalogue.type == 'pycsw_http':
             # upload a native FGDC metadata document
@@ -330,7 +330,7 @@ class GeoNodeCSWTest(GeoNodeBaseTestSupport):
                 self.assertEqual(csw.catalogue.results['deleted'], 1)
 
     def test_csw_bulk_upload(self):
-        """Verify that GeoNode CSW can handle bulk upload of ISO and FGDC metadata"""
+        """Verify that SMap CSW can handle bulk upload of ISO and FGDC metadata"""
         csw = get_catalogue()
         if csw.catalogue.type == 'pycsw_http':
 

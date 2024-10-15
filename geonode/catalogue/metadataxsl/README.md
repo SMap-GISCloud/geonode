@@ -39,4 +39,4 @@ This means that any customization to the output format should be performed on th
 
 # Other refs
 
-Please check the issue https://github.com/GeoNode/geonode/issues/2453
+Please check the issue https://github.com/SMap/geonode/issues/2453

@@ -12,7 +12,7 @@ define(function (require, exports) {
         return template(options);
     };
 
-    /** We have a different notion of success and failure for GeoNode's
+    /** We have a different notion of success and failure for SMap's
      * urls this function allows the user to define two functions, success
      * and failure and have the failure function called when an bad
      * http response is returns and also when there is not success
@@ -90,7 +90,7 @@ define(function (require, exports) {
                 error_message = error.responseText;
             }
 
-            // Support the two different syntax used in GeoNode.
+            // Support the two different syntax used in SMap.
             // TODO(Ariel): Agree on one of those server side and
             // simplify this code. It can be either 'errormsgs' or 'error'.
             if (parsed_errors !== null) {

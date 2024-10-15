@@ -19,7 +19,7 @@ def resource_urls(request):
         SITEURL=settings.SITEURL,
         INSTALLED_APPS=settings.INSTALLED_APPS,
 
-        # GeoNode Apps
+        # SMap Apps
         GEONODE_APPS_ENABLE=getattr(settings, 'GEONODE_APPS_ENABLE', False),
         GEONODE_APPS_NAME=getattr(settings, 'GEONODE_APPS_NAME', 'Apps'),
         GEONODE_APPS_NAV_MENU_ENABLE=getattr(settings, 'GEONODE_APPS_NAV_MENU_ENABLE', False),

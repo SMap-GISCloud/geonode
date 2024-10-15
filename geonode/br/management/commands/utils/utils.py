@@ -170,7 +170,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
 
 
 def get_db_conn(db_name, db_user, db_port, db_host, db_passwd):
-    """Get db conn (GeoNode)"""
+    """Get db conn (SMap)"""
     db_host = db_host if db_host is not None else 'localhost'
     db_port = db_port if db_port is not None else 5432
     conn = psycopg2.connect(
@@ -180,7 +180,7 @@ def get_db_conn(db_name, db_user, db_port, db_host, db_passwd):
 
 
 def patch_db(db_name, db_user, db_port, db_host, db_passwd, truncate_monitoring=False):
-    """Apply patch to GeoNode DB"""
+    """Apply patch to SMap DB"""
     conn = get_db_conn(db_name, db_user, db_port, db_host, db_passwd)
     curs = conn.cursor()
 
@@ -203,7 +203,7 @@ def patch_db(db_name, db_user, db_port, db_host, db_passwd, truncate_monitoring=
 
 
 def cleanup_db(db_name, db_user, db_port, db_host, db_passwd):
-    """Remove spurious records from GeoNode DB"""
+    """Remove spurious records from SMap DB"""
     conn = get_db_conn(db_name, db_user, db_port, db_host, db_passwd)
     curs = conn.cursor()
 

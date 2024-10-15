@@ -87,7 +87,7 @@ def _wcs_describe_coverage(coverage_id):
 
 def _get_wcs_axis_labels(coverage_id):
     """
-    This is a utiliy method using the GeoNode Proxy to fetch the "DescribeCoverage".
+    This is a utiliy method using the SMap Proxy to fetch the "DescribeCoverage".
     The outcome will be used to fetch the "Envelope" "axisLabels", that the WCS declares accordingly to the provided "outputCrs".
 
     The response will be something like the following here below:
@@ -131,7 +131,7 @@ def _get_wcs_axis_labels(coverage_id):
             <ows:Metadata xlink:type="simple" xlink:href="..."/>
             <ows:Metadata xlink:type="simple" xlink:href="..."/>
             <ows:Metadata xlink:type="simple" xlink:href="..."/>
-            <ows:Metadata xlink:type="simple" xlink:href="http://localhost:8000/showmetadata/xsl/42"/>
+            <ows:Metadata xlink:type="simple" xlink:href="https://giscloud.vn/showmetadata/xsl/42"/>
         </gmlcov:Extension>
         </gmlcov:metadata>
         <gml:domainSet>

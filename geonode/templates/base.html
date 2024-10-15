@@ -239,7 +239,7 @@
         }
       </style>
     <![endif]-->
-    <link rel="search" type="application/opensearchdescription+xml" href="{% if SITEURL|default:""|slice:"-1:" == "/" %}{{SITEURL}}{% else %}{{SITEURL}}/{% endif %}catalogue/opensearch" title="{% trans "GeoNode Search" %}"/>
+    <link rel="search" type="application/opensearchdescription+xml" href="{% if SITEURL|default:""|slice:"-1:" == "/" %}{{SITEURL}}{% else %}{{SITEURL}}/{% endif %}catalogue/opensearch" title="{% trans "SMap Search" %}"/>
 
     <script>
         var siteUrl = '{{ SITEURL }}'.replace(/\/?$/, '/');
@@ -307,7 +307,7 @@
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <i class="fa fa-navicon fa-lg"></i>
           </button>
-          <a class="navbar-brand" href="{% url "home" %}">GeoNode</a>
+          <a class="navbar-brand" href="{% url "home" %}">SMap</a>
         </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav toolbar">
@@ -497,7 +497,7 @@
 
     <div class="alert alert-danger alert-dismissible" role="alert" id="ieflag" style="display:none">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <h1>{% trans "You are using an outdated browser that is not supported by GeoNode." %}</h1>
+      <h1>{% trans "You are using an outdated browser that is not supported by SMap." %}</h1>
       <p>{% trans "Please use a <strong>modern browser</strong> like Mozilla Firefox, Google Chrome or Safari." %}</p>
     </div>
 
@@ -602,7 +602,7 @@
           {% endblock contactus %}
           {% if not request.user_agent.is_mobile %}
           <ul class="list-unstyled">
-            <li>{% trans "Powered by" %} <a href="http://geonode.org">{% trans "GeoNode" %}</a>{% if user.is_staff %} <em>{% trans "version" %} {{ VERSION }}</em>{% endif %}</li>
+            <li>{% trans "Powered by" %} <a href="http://geonode.org">{% trans "SMap" %}</a>{% if user.is_staff %} <em>{% trans "version" %} {{ VERSION }}</em>{% endif %}</li>
             <li><a href="{% url "developer" %}">{% trans "Developers" %}</a> | <a href="{% url "about" %}">{% trans "About" %}</a><li>
           </ul>
           {% endif %}

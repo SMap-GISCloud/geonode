@@ -190,7 +190,7 @@ class OGC_Server(object):  # LGTM: @property will not work in old-style classes
     @property
     def internal_ows(self):
         """
-        The Open Web Service url for the server used by GeoNode internally.
+        The Open Web Service url for the server used by SMap internally.
         """
         location = self.LOCATION
         return urljoin(location, 'ows')
@@ -1576,7 +1576,7 @@ class HttpClient:
                     f"{self.username}:{self.password}".encode()).decode()
                 headers['Authorization'] = f'Basic {valid_uname_pw}'
 
-        headers['User-Agent'] = 'GeoNode'
+        headers['User-Agent'] = 'SMap'
         response = None
         content = None
         session = requests.Session()

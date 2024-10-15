@@ -17,7 +17,7 @@
 #
 #########################################################################
 
-"""Utilities for managing GeoNode layers
+"""Utilities for managing SMap layers
 """
 
 # Standard Modules
@@ -281,7 +281,7 @@ def get_valid_layer_name(layer, overwrite):
     elif isinstance(layer, str):
         layer_name = str(layer)
     else:
-        msg = ('You must pass either a filename or a GeoNode layer object')
+        msg = ('You must pass either a filename or a SMap layer object')
         raise GeoNodeException(msg)
 
     if overwrite:
@@ -425,7 +425,7 @@ def file_upload(filename,
                 is_published=True,
                 metadata_uploaded_preserve=False,
                 metadata_upload_form=False):
-    """Saves a layer in GeoNode asking as little information as possible.
+    """Saves a layer in SMap asking as little information as possible.
        Only filename is required, user and title are optional.
 
     :return: Uploaded layer
@@ -723,7 +723,7 @@ def upload(incoming, user=None, overwrite=False,
            verbosity=1, console=None,
            private=False, metadata_uploaded_preserve=False,
            charset='UTF-8'):
-    """Upload a directory of spatial data files to GeoNode
+    """Upload a directory of spatial data files to SMap
 
        This function also verifies that each layer is in GeoServer.
 
@@ -731,7 +731,7 @@ def upload(incoming, user=None, overwrite=False,
        It catches GeoNodeExceptions and gives a report per file
     """
     if verbosity > 1:
-        print("Verifying that GeoNode is running ...", file=console)
+        print("Verifying that SMap is running ...", file=console)
 
     if console is None:
         console = open(os.devnull, 'w')
@@ -1148,7 +1148,7 @@ def validate_input_source(layer, filename, files, gtype=None, action_type='repla
             _ff = json.loads(lyr.GetFeature(0).ExportToJson())
             if gtype:
                 logger.info(
-                    _("Local GeoNode layer has geometry type."))
+                    _("Local SMap layer has geometry type."))
                 if _ff["geometry"]["type"] in gtype or gtype in _ff["geometry"]["type"]:
                     schema_is_compliant = True
             elif "geometry" in _ff and _ff["geometry"]["type"]:

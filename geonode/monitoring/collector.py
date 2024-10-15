@@ -998,7 +998,7 @@ class CollectorAPI:
 
     def send_mails(self, notification, emails, ndata, when=None):
         base_ctx = self.compose_notifications(ndata, when=when)
-        subject = _(f"GeoNode Monitoring on {base_ctx['host']} "
+        subject = _(f"SMap Monitoring on {base_ctx['host']} "
                     f"reports errors: {notification.notification_subject}")
         for email in emails:
             ctx = {'recipient': {'username': email}}

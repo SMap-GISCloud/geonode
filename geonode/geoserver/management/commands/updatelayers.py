@@ -26,7 +26,7 @@ import ast
 
 
 class Command(BaseCommand):
-    help = 'Update the GeoNode application with data from GeoServer'
+    help = 'Update the SMap application with data from GeoServer'
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -48,13 +48,13 @@ class Command(BaseCommand):
             action='store_true',
             dest='skip_geonode_registered',
             default=False,
-            help='Just processing GeoServer layers still not registered in GeoNode.'),
+            help='Just processing GeoServer layers still not registered in SMap.'),
         parser.add_argument(
             '--remove-deleted',
             action='store_true',
             dest='remove_deleted',
             default=False,
-            help='Remove GeoNode layers that have been deleted from GeoSever.'),
+            help='Remove SMap layers that have been deleted from GeoSever.'),
         parser.add_argument(
             '-u',
             '--user',
@@ -130,7 +130,7 @@ class Command(BaseCommand):
                                               dict_['error'],
                                               dict_['traceback'])
             if remove_deleted:
-                print("Detailed report of layers to be deleted from GeoNode that failed:")
+                print("Detailed report of layers to be deleted from SMap that failed:")
                 for dict_ in output['deleted_layers']:
                     if dict_['status'] == 'delete_failed':
                         print("\n\n", dict_['name'], "\n================")

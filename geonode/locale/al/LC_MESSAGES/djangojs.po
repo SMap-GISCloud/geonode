@@ -238,7 +238,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due "
+" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due "
 "to a connection timeout. Consider using the management commands to import "
 "data!"
 msgstr ""
@@ -308,7 +308,7 @@ msgstr ""
 msgid "Manage Styles"
 msgstr ""
 
-msgid "Please wait until GeoNode finished configuring it!"
+msgid "Please wait until SMap finished configuring it!"
 msgstr ""
 
 msgid "The column %1 was renamed to %2 <br/>"

@@ -90,7 +90,7 @@ def catalogue_post_save(instance, sender, **kwargs):
                     extension='xml',
                     link_type='metadata').update(**_d)
 
-    # generate an XML document (GeoNode's default is ISO)
+    # generate an XML document (SMap's default is ISO)
     if instance.metadata_uploaded and instance.metadata_uploaded_preserve:
         md_doc = etree.tostring(dlxml.fromstring(instance.metadata_xml))
     else:

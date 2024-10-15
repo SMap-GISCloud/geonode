@@ -1456,7 +1456,7 @@ class TestLayerDetailMapViewRights(GeoNodeBaseTestSupport):
 '''
 Smoke test to explain how the uuidhandler will override the uuid for the layers
 Documentation of the handler is available here:
-https://github.com/GeoNode/documentation/blob/703cc6ba92b7b7a83637a874fb449420a9f8b78a/basic/settings/index.rst#uuid-handler
+https://github.com/SMap/documentation/blob/703cc6ba92b7b7a83637a874fb449420a9f8b78a/basic/settings/index.rst#uuid-handler
 '''
 
 
@@ -1639,7 +1639,7 @@ class TestSetMetadata(TestCase):
         expected_vals = {
             "abstract": "real abstract",
             "constraints_other": "Not Specified: The original author did not specify a license.",
-            "data_quality_statement": "Created with GeoNode",
+            "data_quality_statement": "Created with SMap",
             'date': datetime.datetime(2021, 4, 9, 9, 0, 46),
             "language": "eng",
             "purpose": None,
@@ -1692,7 +1692,7 @@ class TestCustomMetadataParser(TestCase):
         self.expected_vals = {
             "abstract": "real abstract",
             "constraints_other": "Not Specified: The original author did not specify a license.",
-            "data_quality_statement": "Created with GeoNode",
+            "data_quality_statement": "Created with SMap",
             'date': datetime.datetime(2021, 4, 9, 9, 0, 46),
             "language": "eng",
             "purpose": None,

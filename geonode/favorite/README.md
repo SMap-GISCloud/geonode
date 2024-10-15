@@ -1,6 +1,6 @@
 # Favorite App Plugin
 
-This GeoNode contrib module was contributed by the MapStory project.
+This SMap contrib module was contributed by the MapStory project.
 
 Function of the module:
 Allow user to favorite content in Document, Layer, Map detail pages.

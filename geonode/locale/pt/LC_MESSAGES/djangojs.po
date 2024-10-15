@@ -26,7 +26,7 @@
 # Marcos Reis Rosa <mrosa@arcplan.com.br>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: GeoNode\n"
+"Project-Id-Version: SMap\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-07 15:01+0200\n"
 "PO-Revision-Date: 2020-05-11 20:26+0100\n"
@@ -263,7 +263,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due "
+" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due "
 "to a connection timeout. Consider using the management commands to import "
 "data!"
 msgstr ""
@@ -333,7 +333,7 @@ msgstr "Carregar SLD"
 msgid "Manage Styles"
 msgstr "Gerenciar Estilos"
 
-msgid "Please wait until GeoNode finished configuring it!"
+msgid "Please wait until SMap finished configuring it!"
 msgstr ""
 
 msgid "The column %1 was renamed to %2 <br/>"
@@ -610,17 +610,17 @@ msgstr ""
 #~ msgid "Not provided."
 #~ msgstr "Não fornecido."
 
-#~ msgid "GeoNode site admin"
+#~ msgid "SMap site admin"
 #~ msgstr "Site admin do Geonode"
 
-#~ msgid "GeoNode administration"
+#~ msgid "SMap administration"
 #~ msgstr "Administração Geonode"
 
 #~ msgid "Welcome"
 #~ msgstr "Bem-vindo"
 
 #~ msgid ""
-#~ "GeoNode is an open source platform for sharing geospatial data and maps."
+#~ "SMap is an open source platform for sharing geospatial data and maps."
 #~ msgstr ""
 #~ "O Geonode é uma plataforma open source para partilha de mapas e "
 #~ "informação geoespacial."

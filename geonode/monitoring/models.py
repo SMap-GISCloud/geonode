@@ -95,10 +95,10 @@ class ServiceType(models.Model):
     TYPE_HOST_GN = 'hostgeonode'
     TYPE_HOST_GS = 'hostgeoserver'
 
-    TYPES = ((TYPE_GEONODE, _("GeoNode"),),
+    TYPES = ((TYPE_GEONODE, _("SMap"),),
              (TYPE_GEOSERVER, _("GeoServer"),),
              (TYPE_HOST_GS, _("Host (GeoServer)",),),
-             (TYPE_HOST_GN, _("Host (GeoNode)",),),
+             (TYPE_HOST_GN, _("Host (SMap)",),),
              )
     name = models.CharField(
         max_length=255,

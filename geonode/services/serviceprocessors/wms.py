@@ -582,7 +582,7 @@ class GeoNodeServiceHandler(WmsServiceHandler):
         status = response.status_code
         content_type = response.headers['Content-Type']
 
-        # NEW-style OWS Enabled GeoNode
+        # NEW-style OWS Enabled SMap
         if int(status) == 200 and 'application/json' == content_type:
             try:
                 _json_obj = json.loads(content)
@@ -597,7 +597,7 @@ class GeoNodeServiceHandler(WmsServiceHandler):
             except Exception as e:
                 logger.exception(e)
 
-        # OLD-style not OWS Enabled GeoNode
+        # OLD-style not OWS Enabled SMap
         _url = f"{url.scheme}://{url.netloc}/geoserver/ows"
         return _url
 

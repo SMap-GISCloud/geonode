@@ -690,7 +690,7 @@ _steps = {
 
 
 @csrf_exempt
-@logged_in_or_basicauth(realm="GeoNode")
+@logged_in_or_basicauth(realm="SMap")
 @login_required
 def view(req, step=None):
     """Main uploader view"""

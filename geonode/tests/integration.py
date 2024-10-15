@@ -105,7 +105,7 @@ r"""
 
     $ paver test_integration -n geonode.tests.integration:GeoNodeMapTest.test_cascading_delete
 
-A. Create a GeoNode DB (If using a PostgreSQL DB)
+A. Create a SMap DB (If using a PostgreSQL DB)
 
 $ sudo su postgres
 $ psql -c "drop database test_geonode;"
@@ -127,7 +127,7 @@ $ geonode createsuperuser
 class NormalUserTest(GeoNodeLiveTestSupport):
 
     """
-    Tests GeoNode functionality for non-administrative users
+    Tests SMap functionality for non-administrative users
     """
     port = 8001
 
@@ -278,7 +278,7 @@ class GeoNodeMapTest(GeoNodeLiveTestSupport):
 
     @timeout_decorator.timeout(LOCAL_TIMEOUT)
     def test_layer_upload(self):
-        """Test that layers can be uploaded to running GeoNode/GeoServer
+        """Test that layers can be uploaded to running SMap/GeoServer
         """
         layers = {}
         expected_layers = []
@@ -340,7 +340,7 @@ class GeoNodeMapTest(GeoNodeLiveTestSupport):
             if not found:
                 msg = (
                     'Upload could not be verified, the layer %s is not '
-                    'in geoserver %s, but GeoNode did not raise any errors, '
+                    'in geoserver %s, but SMap did not raise any errors, '
                     'this should never happen.' %
                     (layer_name, settings.OGC_SERVER['default']['LOCATION']))
                 raise GeoNodeException(msg)
@@ -634,7 +634,7 @@ class GeoNodeMapTest(GeoNodeLiveTestSupport):
 
     @timeout_decorator.timeout(LOCAL_TIMEOUT)
     def test_bad_shapefile(self):
-        """Verifying GeoNode complains about a shapefile without .prj
+        """Verifying SMap complains about a shapefile without .prj
         """
         thefile = os.path.join(gisdata.BAD_DATA, 'points_epsg2249_no_prj.shp')
         try:

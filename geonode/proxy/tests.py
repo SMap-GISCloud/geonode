@@ -125,7 +125,7 @@ class ProxyTest(GeoNodeBaseTestSupport):
         assert request_mock.call_args[0][0] == 'http://example.org/index.html'
 
     def test_proxy_preserve_headers(self):
-        """The GeoNode Proxy should preserve the original request headers."""
+        """The SMap Proxy should preserve the original request headers."""
         import geonode.proxy.views
 
         _test_headers = {

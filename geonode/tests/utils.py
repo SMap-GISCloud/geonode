@@ -204,7 +204,7 @@ class Client(DjangoTestClient):
         return self.make_request(path, debug=debug)
 
     def login(self):
-        """ Method to login the GeoNode site"""
+        """ Method to login the SMap site"""
         from django.contrib.auth import authenticate
         assert authenticate(username=self.user, password=self.passwd)
         self.csrf_token = self.get_csrf_token()
@@ -225,7 +225,7 @@ class Client(DjangoTestClient):
 
     def upload_file(self, _file, perms=None):
         """ function that uploads a file, or a collection of files, to
-        the GeoNode"""
+        the SMap"""
         if not self.csrf_token:
             self.login()
         spatial_files = ("dbf_file", "shx_file", "prj_file")

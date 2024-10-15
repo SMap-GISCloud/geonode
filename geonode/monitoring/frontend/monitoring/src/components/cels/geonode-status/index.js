@@ -146,7 +146,7 @@ class GeonodeStatus extends React.Component {
         >
           {hosts}
         </SelectField>
-        <h5>GeoNode HW Status</h5>
+        <h5>SMap HW Status</h5>
         <div style={styles.geonode}>
           <AverageCPU cpu={cpu} />
           <AverageMemory mem={mem} />

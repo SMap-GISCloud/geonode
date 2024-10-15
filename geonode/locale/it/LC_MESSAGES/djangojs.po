@@ -26,7 +26,7 @@
 # Antonio <anto.opro@gmail.com>, 2013
 msgid ""
 msgstr ""
-"Project-Id-Version: GeoNode\n"
+"Project-Id-Version: SMap\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-07 15:01+0200\n"
 "PO-Revision-Date: 2021-04-07 15:07+0200\n"
@@ -325,11 +325,11 @@ msgstr ""
 "che il server sarà in applicazione solo temporaneamente."
 
 msgid ""
-" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due "
+" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due "
 "to a connection timeout. Consider using the management commands to import "
 "data!"
 msgstr ""
-" - 504 Gateway Timeout. GeoNode ha perso la connessione con GeoServer o DB a "
+" - 504 Gateway Timeout. SMap ha perso la connessione con GeoServer o DB a "
 "causa di un timeout di connessione. Prendi in considerazione l'utilizzo dei "
 "comandi di gestione per importare dati!"
 
@@ -425,8 +425,8 @@ msgstr "Carica SLD"
 msgid "Manage Styles"
 msgstr "Gestisci Stili"
 
-msgid "Please wait until GeoNode finished configuring it!"
-msgstr "Attendere che GeoNode abbia finito di configurarlo!"
+msgid "Please wait until SMap finished configuring it!"
+msgstr "Attendere che SMap abbia finito di configurarlo!"
 
 msgid "The column %1 was renamed to %2 <br/>"
 msgstr "La colonna %1 è stata rinominata in %2 <br/>"

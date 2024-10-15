@@ -213,7 +213,7 @@ def layer_style_manage(request, layername):
         try:
             cat = gs_catalog
 
-            # First update the layer style info from GS to GeoNode's DB
+            # First update the layer style info from GS to SMap's DB
             try:
                 set_styles(layer, cat)
             except AttributeError:
@@ -610,7 +610,7 @@ def resolve_user(request):
     return HttpResponse(json.dumps(resp), content_type="application/json")
 
 
-@logged_in_or_basicauth(realm="GeoNode")
+@logged_in_or_basicauth(realm="SMap")
 def layer_acls(request):
     """
     returns json-encoded lists of layer identifiers that

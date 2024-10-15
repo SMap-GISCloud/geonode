@@ -49,7 +49,7 @@ class TestGeoNodeRepository(TestCase):
     @staticmethod
     def __request_factory():
         factory = RequestFactory()
-        url = "http://localhost:8000/catalogue/csw?request=GetRecords"
+        url = "https://giscloud.vn/catalogue/csw?request=GetRecords"
         url += "&service=CSW&version=2.0.2&outputschema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd"
         url += "&elementsetname=brief&typenames=csw:Record&resultType=results"
         request = factory.get(url)

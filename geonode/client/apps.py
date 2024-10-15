@@ -24,4 +24,4 @@ class AppConfig(BaseAppConfig):
 
     name = "geonode.client"
     label = "geonode_client"
-    verbose_name = _("GeoNode Client Library")
+    verbose_name = _("SMap Client Library")

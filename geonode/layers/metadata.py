@@ -17,7 +17,7 @@
 #
 #########################################################################
 
-"""Utilities for managing GeoNode resource metadata
+"""Utilities for managing SMap resource metadata
 """
 # Standard Modules
 import logging

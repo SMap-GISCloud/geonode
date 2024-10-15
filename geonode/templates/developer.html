@@ -10,15 +10,15 @@
 
 <div class="row">
   <div class="col-md-8">
-    <p class="lead">{% trans "Useful information for developers interested in GeoNode." %}</p>
+    <p class="lead">{% trans "Useful information for developers interested in SMap." %}</p>
     {% blocktrans %}
-    <p><a href="http://geonode.org/">GeoNode</a> is an open service built on open source software. We encourage you to build new applications using the components and resources it provides. This page is a starting point for developers interesting in taking full advantage of GeoNode. It also includes links to the project's source code so anyone can build and customize their own GeoNode. </p>
+    <p><a href="http://geonode.org/">SMap</a> is an open service built on open source software. We encourage you to build new applications using the components and resources it provides. This page is a starting point for developers interesting in taking full advantage of SMap. It also includes links to the project's source code so anyone can build and customize their own SMap. </p>
 
-    <h3>GeoNode Software</h3>
+    <h3>SMap Software</h3>
 
-    <p>All the code that runs GeoNode is open source. The code is available at <a href="http://github.com/GeoNode/geonode">http://github.com/GeoNode/geonode/</a>. The issue tracker for the project is at <a href="http://github.com/GeoNode/geonode/issues">http://github.com/GeoNode/geonode/issues</a>.</p>
+    <p>All the code that runs SMap is open source. The code is available at <a href="http://github.com/SMap/geonode">http://github.com/SMap/geonode/</a>. The issue tracker for the project is at <a href="http://github.com/SMap/geonode/issues">http://github.com/SMap/geonode/issues</a>.</p>
 
-    <p>GeoNode is built using several open source projects, each with its own community. If you are interested in contributing new features to the GeoNode, we encourage you to do so by contributing to one of the projects on which it is built:</p>
+    <p>SMap is built using several open source projects, each with its own community. If you are interested in contributing new features to the SMap, we encourage you to do so by contributing to one of the projects on which it is built:</p>
     <ul>
       <li><a href="http://geoserver.org">GeoServer</a> - Standards based server for geospatial information</li>
       <li><a href="http://geowebcache.org">GeoWebCache</a> - Cache engine for WMS Tiles</li><li><a href="http://openlayers.org">OpenLayers</a> - Pure JavaScript library powering the maps of GeoExt</li>
@@ -29,10 +29,10 @@
     <p>The data in this application is served using open standards endorsed by ISO and the <a href="http://opengeospatial.org/">Open Geospatial Consortium</a>; in particular, WMS (Web Map Service) is used for accessing maps, WFS (Web Feature Service) is used for accessing vector data, and WCS (Web Coverage Service) is used for accessing raster data.  WMC (Web Map Context Documents) is used for sharing maps. You can use these services in your own applications using libraries such as OpenLayers, GeoTools, and OGR (all of which are open-source software and available at zero cost). Additionally, CSW (Catalog Service for the Web) supports access to collections of descriptive information (metadata) about data and services.</p>
 
     <h3>What is GeoWebCache?</h3>
-    <p>GeoWebCache provides mapping tiles that are compatible with a number of mapping engines, including Google Maps, Bing Maps and OpenLayers. All the data hosted by GeoNode is also available through GeoWebCache. GeoWebCache improves on WMS by caching data and providing more responsive maps.</p>
+    <p>GeoWebCache provides mapping tiles that are compatible with a number of mapping engines, including Google Maps, Bing Maps and OpenLayers. All the data hosted by SMap is also available through GeoWebCache. GeoWebCache improves on WMS by caching data and providing more responsive maps.</p>
 
     <h3>CSW Example Code</h3>
-    <p>To interact with GeoNode's CSW you can use any CSW client (QGIS MetaSearch, GRASS, etc.).  The following example illustrates a simple invocation using the OWSLib Python package:</p>
+    <p>To interact with SMap's CSW you can use any CSW client (QGIS MetaSearch, GRASS, etc.).  The following example illustrates a simple invocation using the OWSLib Python package:</p>
     <p><code>from owslib.csw import CatalogueServiceWeb</code></p>
     <p><code>from owslib.fes import PropertyIsLike</code></p>
     <p><code>csw = CatalogueServiceWeb('{{ CATALOGUE_BASE_URL }}')</code></p>
@@ -43,15 +43,15 @@
 
     <h3>OpenLayers Example Code</h3>
 
-    <p>To include a GeoNode map layer in an OpenLayers map, first find the name for that layer. This is found in the layer's <code>name</code> field (not <code>title</code>) of the layer list. For this example, we will use the Nicaraguan political boundaries background layer, whose name is <code>risk:nicaragua_admin</code>. Then, create an instance of OpenLayers.Layer.WMS:</p>
-    <p><code>var geonodeLayer = new OpenLayers.Layer.WMS("GeoNode Risk Data", "http://demo.geonode.org/geoserver/wms",{ layers: "risk:nicaragua_admin" });</code></p>
+    <p>To include a SMap map layer in an OpenLayers map, first find the name for that layer. This is found in the layer's <code>name</code> field (not <code>title</code>) of the layer list. For this example, we will use the Nicaraguan political boundaries background layer, whose name is <code>risk:nicaragua_admin</code>. Then, create an instance of OpenLayers.Layer.WMS:</p>
+    <p><code>var geonodeLayer = new OpenLayers.Layer.WMS("SMap Risk Data", "http://demo.geonode.org/geoserver/wms",{ layers: "risk:nicaragua_admin" });</code></p>
 
     <h3>Google Maps Example Code</h3>
-    <p>To include a GeoNode map layer in a Google Map, include the layer namein the URL template.</p>
+    <p>To include a SMap map layer in a Google Map, include the layer namein the URL template.</p>
     <p><code>var tilelayer =  new GTileLayer(null, null, null, {tileUrlTemplate: 'http://demo.geonode.org/geoserver/gwc/service/gmaps?layers=risk:nicaragua_admin&#38;zoom={Z}&#38;x={X}&#38;y={Y}', isPng:true, opacity:0.5 } );</code></p>
 
     <h3>Shapefile/GeoJSON/GML Output</h3>
-    <p>To get data from the GeoNode web services use the WFS protocol. For example, to get the full Nicaraguan admin boundaries use:</p>
+    <p>To get data from the SMap web services use the WFS protocol. For example, to get the full Nicaraguan admin boundaries use:</p>
     <p><code>http://demo.geonode.org/geoserver/wfs?request=GetFeature&#38;typeName=risk:nicaragua_admin&#38;outputformat=SHAPE-ZIP</code></p>
     <p>Changing output format to <code>json</code>, <code>GML2</code>, <code>GML3</code>, or <code>csv</code> will get data in those formats. The WFS protocol also can handle more precise queries, specifying a bounding box or various spatial and non-spatial filters based on the attributes of the data.</p>
 
@@ -61,8 +61,8 @@
   </div>
 
   <div class="col-md-4">
-    <h3>{% trans "GeoNode's Web Services" %}</h3>
-    <p>{% trans "GeoNode's Web Services are available from the following URLs:" %}</p>
+    <h3>{% trans "SMap's Web Services" %}</h3>
+    <p>{% trans "SMap's Web Services are available from the following URLs:" %}</p>
     <table class="table table-striped table-condensed">
       <tr>
         <td><strong>{% trans "Dynamic tiles via WMS:" %}</strong></td>

@@ -193,7 +193,7 @@ class TestSetAttributes(GeoNodeBaseTestSupport):
         for a in _l.attributes:
             self.assertIn([a.attribute, a.attribute_type], expected_results)
 
-        # GeoNode cleans up local duplicated attributes
+        # SMap cleans up local duplicated attributes
         for attribute in attribute_map:
             field = attribute[0]
             ftype = attribute[1]
@@ -215,7 +215,7 @@ class TestSetAttributes(GeoNodeBaseTestSupport):
         for a in _l.attributes:
             self.assertIn([a.attribute, a.attribute_type], expected_results)
 
-        # Test that deleted attributes from GeoServer gets deleted on GeoNode too
+        # Test that deleted attributes from GeoServer gets deleted on SMap too
         attribute_map = [
             ['id', 'Integer'],
             ['date_as_date', 'xsd:dateTime'],

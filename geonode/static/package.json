@@ -1,7 +1,7 @@
 {
   "name": "geonode-assets",
   "version": "3.3.2",
-  "description": "Builds static (JS, CSS, IMG) assets for GeoNode 2.0",
+  "description": "Builds static (JS, CSS, IMG) assets for SMap 2.0",
   "main": "gruntfile.js",
   "dependencies": {
     "@yaireo/tagify": "^3.6.2",

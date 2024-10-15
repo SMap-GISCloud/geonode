@@ -18,8 +18,8 @@
 #
 #########################################################################
 
-""" There are 3 ways to override GeoNode settings:
-   1. Using environment variables, if your changes to GeoNode are minimal.
+""" There are 3 ways to override SMap settings:
+   1. Using environment variables, if your changes to SMap are minimal.
    2. Creating a downstream project, if you are doing a lot of customization.
    3. Override settings in a local_settings.py file, legacy.
 """
@@ -180,13 +180,13 @@ UPLOADER = {
 CATALOGUE = {
     'default': {
         # The underlying CSW implementation
-        # default is pycsw in local mode (tied directly to GeoNode Django DB)
+        # default is pycsw in local mode (tied directly to SMap Django DB)
         'ENGINE': 'geonode.catalogue.backends.pycsw_local',
         # pycsw in non-local mode
         # 'ENGINE': 'geonode.catalogue.backends.pycsw_http',
         # deegree and others
         # 'ENGINE': 'geonode.catalogue.backends.generic',
-        # The FULLY QUALIFIED base url to the CSW instance for this GeoNode
+        # The FULLY QUALIFIED base url to the CSW instance for this SMap
         'URL': urljoin(SITEURL, '/catalogue/csw'),
         # 'URL': 'http://localhost:8080/deegree-csw-demo-3.0.4/services',
         # 'ALTERNATES_ONLY': True,
@@ -221,12 +221,12 @@ PYCSW = {
             # 'csw_harvest_pagesize': '10',
         },
         'metadata:main': {
-            'identification_title': 'GeoNode Catalogue',
-            'identification_abstract': 'GeoNode is an open source platform' \
+            'identification_title': 'SMap Catalogue',
+            'identification_abstract': 'SMap is an open source platform' \
             ' that facilitates the creation, sharing, and collaborative use' \
             ' of geospatial data',
             'identification_keywords': 'sdi, catalogue, discovery, metadata,' \
-            ' GeoNode',
+            ' SMap',
             'identification_keywords_type': 'theme',
             'identification_fees': 'None',
             'identification_accessconstraints': 'None',
@@ -264,7 +264,7 @@ PYCSW = {
 
 # -- START Client Hooksets Setup
 
-# GeoNode javascript client configuration
+# SMap javascript client configuration
 
 # default map projection
 # Note: If set to EPSG:4326, then only EPSG:4326 basemaps will work.

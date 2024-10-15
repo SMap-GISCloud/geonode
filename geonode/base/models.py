@@ -161,7 +161,7 @@ class TopicCategory(models.Model):
     identifier = models.CharField(max_length=255, default='location')
     description = models.TextField(default='')
     gn_description = models.TextField(
-        'GeoNode description', default='', null=True)
+        'SMap description', default='', null=True)
     is_choice = models.BooleanField(default=True)
     fa_class = models.CharField(max_length=64, default='fa-times')
 
@@ -182,7 +182,7 @@ class SpatialRepresentationType(models.Model):
     """
     identifier = models.CharField(max_length=255, editable=False)
     description = models.CharField(max_length=255, editable=False)
-    gn_description = models.CharField('GeoNode description', max_length=255)
+    gn_description = models.CharField('SMap description', max_length=255)
     is_choice = models.BooleanField(default=True)
 
     def __str__(self):
@@ -278,7 +278,7 @@ class RestrictionCodeType(models.Model):
     """
     identifier = models.CharField(max_length=255, editable=False)
     description = models.TextField(max_length=255, editable=False)
-    gn_description = models.TextField('GeoNode description', max_length=255)
+    gn_description = models.TextField('SMap description', max_length=255)
     is_choice = models.BooleanField(default=True)
 
     def __str__(self):
@@ -641,7 +641,7 @@ class ResourceBaseManager(PolymorphicManager):
         superusers = get_user_model().objects.filter(is_superuser=True).order_by('id')
         if superusers.count() == 0:
             raise RuntimeError(
-                'GeoNode needs at least one admin/superuser set')
+                'SMap needs at least one admin/superuser set')
 
         return superusers[0]
 

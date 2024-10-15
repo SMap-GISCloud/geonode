@@ -51,7 +51,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
 
-    help = 'Backup the GeoNode application data'
+    help = 'Backup the SMap application data'
 
     def add_arguments(self, parser):
 
@@ -151,7 +151,7 @@ class Command(BaseCommand):
             else:
                 print("Skipping geoserver backup")
 
-            # Deactivate GeoNode Signals
+            # Deactivate SMap Signals
             with DisableDjangoSignals():
 
                 # Dump Fixtures
@@ -194,7 +194,7 @@ class Command(BaseCommand):
                 for static_files_folder in static_folders:
 
                     # skip dumping of static files of apps not located under LOCAL_ROOT path
-                    # (check to prevent saving files from site-packages in project-template based GeoNode projects)
+                    # (check to prevent saving files from site-packages in project-template based SMap projects)
                     if getattr(settings, 'LOCAL_ROOT', None) and \
                             not static_files_folder.startswith(settings.LOCAL_ROOT):
                         print(f"Skipping static directory: {static_files_folder}. "
@@ -226,7 +226,7 @@ class Command(BaseCommand):
                 for template_files_folder in template_folders:
 
                     # skip dumping of template files of apps not located under LOCAL_ROOT path
-                    # (check to prevent saving files from site-packages in project-template based GeoNode projects)
+                    # (check to prevent saving files from site-packages in project-template based SMap projects)
                     if getattr(settings, 'LOCAL_ROOT', None) and \
                             not template_files_folder.startswith(settings.LOCAL_ROOT):
                         print(f"Skipping template directory: {template_files_folder}. "
@@ -251,7 +251,7 @@ class Command(BaseCommand):
                 for locale_files_folder in locale_folders:
 
                     # skip dumping of locale files of apps not located under LOCAL_ROOT path
-                    # (check to prevent saving files from site-packages in project-template based GeoNode projects)
+                    # (check to prevent saving files from site-packages in project-template based SMap projects)
                     if getattr(settings, 'LOCAL_ROOT', None) and \
                             not locale_files_folder.startswith(settings.LOCAL_ROOT):
                         logger.info(f"Skipping locale directory: {locale_files_folder}. "

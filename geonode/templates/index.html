@@ -23,7 +23,7 @@
       <h1>{% trans jumbotron_welcome_title %}</h1>
       {% endwith %}
       <p></p>
-      {% with jumbotron_welcome_content=custom_theme.jumbotron_welcome_content|default:"GeoNode is an open source platform for sharing geospatial data and maps."|template_trans %}
+      {% with jumbotron_welcome_content=custom_theme.jumbotron_welcome_content|default:"SMap is an open source platform for sharing geospatial data and maps."|template_trans %}
       <p>{% trans jumbotron_welcome_content %}</p>
       {% endwith %}
       {% if not custom_theme.jumbotron_cta_hide %}
@@ -153,7 +153,7 @@
               <div class="col-md-6">
                 <p><a href="{% url "document_browse" %}"><i class="fa fa-newspaper-o fa-4x"></i></a></p>
                 <h2><a href="{% url "document_browse" %}">{{ facets.document|default:_("No") }} {% blocktrans count counter=facets.document %}Document{% plural %}Documents{% endblocktrans %}</a></h2>
-                <p>{% trans "As for the layers and maps GeoNode allows to publish tabular and text data, manage theirs metadata and associated documents." %}</p>
+                <p>{% trans "As for the layers and maps SMap allows to publish tabular and text data, manage theirs metadata and associated documents." %}</p>
                 {% if not request.user_agent.is_mobile %}                
                   {% if user.is_authenticated %}
                   <p class="text-center"><a class="btn btn-default" href="{% url "document_browse" %}" role="button">{% trans "Add documents" %} &raquo;</a></p>

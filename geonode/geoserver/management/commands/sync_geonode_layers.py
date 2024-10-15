@@ -87,7 +87,7 @@ def sync_geonode_layers(ignore_errors,
 
 
 class Command(BaseCommand):
-    help = 'Update the GeoNode layers: permissions (including GeoFence database), statistics, thumbnails'
+    help = 'Update the SMap layers: permissions (including GeoFence database), statistics, thumbnails'
 
     def add_arguments(self, parser):
         parser.add_argument(

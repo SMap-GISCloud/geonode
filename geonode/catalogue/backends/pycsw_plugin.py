@@ -32,7 +32,7 @@ from pycsw.core import util
 LOGGER = logging.getLogger(__name__)
 
 GEONODE_SERVICE_TYPES = {
-    # 'GeoNode enum': 'CSW enum'
+    # 'SMap enum': 'CSW enum'
     'http://www.opengis.net/cat/csw/2.0.2': 'OGC:CSW',
     'http://www.opengis.net/wms': 'OGC:WMS',
     'http://www.opengis.net/wmts/1.0': 'OGC:WMTS',
@@ -55,12 +55,12 @@ class GeoNodeRepository(Repository):
         self.context = context
         self.filter = repo_filter
         self.fts = False
-        self.label = 'GeoNode'
+        self.label = 'SMap'
         self.local_ingest = True
 
         self.dbtype = settings.DATABASES['default']['ENGINE'].split('.')[-1]
 
-        # GeoNode PostgreSQL installs are PostGIS enabled
+        # SMap PostgreSQL installs are PostGIS enabled
         if self.dbtype == 'postgis':
             self.dbtype = 'postgresql+postgis+wkt'
 

@@ -34,7 +34,7 @@ def get_available_service_types():
 
     default = OrderedDict({
         enumerations.WMS: {"OWS": True, "handler": WmsServiceHandler, "label": _('Web Map Service')},
-        enumerations.GN_WMS: {"OWS": True, "handler": GeoNodeServiceHandler, "label": _('GeoNode (Web Map Service)')},
+        enumerations.GN_WMS: {"OWS": True, "handler": GeoNodeServiceHandler, "label": _('SMap (Web Map Service)')},
         # enumerations.WFS: {"OWS": True, "handler": ServiceHandlerBase, "label": _('Paired WMS/WFS/WCS'},
         # enumerations.TMS: {"OWS": False, "handler": ServiceHandlerBase, "label": _('Paired WMS/WFS/WCS'},
         enumerations.REST_MAP: {"OWS": False, "handler": ArcMapServiceHandler, "label": _('ArcGIS REST MapServer')},

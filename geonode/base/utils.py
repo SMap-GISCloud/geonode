@@ -17,7 +17,7 @@
 #
 #########################################################################
 
-"""Utilities for managing GeoNode base models
+"""Utilities for managing SMap base models
 """
 
 # Standard Modules

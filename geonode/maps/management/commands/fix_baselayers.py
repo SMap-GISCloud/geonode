@@ -24,7 +24,7 @@ from geonode.maps.utils import fix_baselayers
 
 
 class Command(BaseCommand):
-    help = ('Fix base layers for all of the GeoNode maps or for a given map.\n\n'
+    help = ('Fix base layers for all of the SMap maps or for a given map.\n\n'
             'Arguments:\n'
             'map_id - numeric map ID (optional)\n')
 

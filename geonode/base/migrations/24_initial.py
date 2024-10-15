@@ -122,8 +122,8 @@ class Migration(migrations.Migration):
                 ('identifier', models.CharField(max_length=255, editable=False)),
                 ('description', models.TextField(max_length=255, editable=False)),
                 ('description_en', models.TextField(max_length=255, null=True, editable=False)),
-                ('gn_description', models.TextField(max_length=255, verbose_name='GeoNode description')),
-                ('gn_description_en', models.TextField(max_length=255, null=True, verbose_name='GeoNode description')),
+                ('gn_description', models.TextField(max_length=255, verbose_name='SMap description')),
+                ('gn_description_en', models.TextField(max_length=255, null=True, verbose_name='SMap description')),
                 ('is_choice', models.BooleanField(default=True)),
             ],
             options={
@@ -138,8 +138,8 @@ class Migration(migrations.Migration):
                 ('identifier', models.CharField(max_length=255, editable=False)),
                 ('description', models.CharField(max_length=255, editable=False)),
                 ('description_en', models.CharField(max_length=255, null=True, editable=False)),
-                ('gn_description', models.CharField(max_length=255, verbose_name='GeoNode description')),
-                ('gn_description_en', models.CharField(max_length=255, null=True, verbose_name='GeoNode description')),
+                ('gn_description', models.CharField(max_length=255, verbose_name='SMap description')),
+                ('gn_description_en', models.CharField(max_length=255, null=True, verbose_name='SMap description')),
                 ('is_choice', models.BooleanField(default=True)),
             ],
             options={
@@ -154,8 +154,8 @@ class Migration(migrations.Migration):
                 ('identifier', models.CharField(default='location', max_length=255)),
                 ('description', models.TextField(default='')),
                 ('description_en', models.TextField(default='', null=True)),
-                ('gn_description', models.TextField(default='', null=True, verbose_name='GeoNode description')),
-                ('gn_description_en', models.TextField(default='', null=True, verbose_name='GeoNode description')),
+                ('gn_description', models.TextField(default='', null=True, verbose_name='SMap description')),
+                ('gn_description_en', models.TextField(default='', null=True, verbose_name='SMap description')),
                 ('is_choice', models.BooleanField(default=True))
             ],
             options={

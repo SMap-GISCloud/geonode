@@ -363,7 +363,7 @@ define(function (require, exports) {
             default_message += gettext(" - 503 Service Unavailable. This error occurs when the server is unable to handle requests due to a temporary overload or due to the server being temporarily closed for maintenance. The error indicates that the server will only temporarily be down.");
         }
         else if (status == 504) {
-            default_message += gettext(" - 504 Gateway Timeout. GeoNode lost the connection with GeoServer or DB due to a connection timeout. Consider using the management commands to import data!");
+            default_message += gettext(" - 504 Gateway Timeout. SMap lost the connection with GeoServer or DB due to a connection timeout. Consider using the management commands to import data!");
         }
         else if (status == 505) {
             default_message += gettext(" - 505 HTTP Version Not Supported. This error occurs when the server refuses to support the HTTP protocol that has been specified by the client computer. This can be caused by the protocol not being specified properly by the client computer; for example, if an invalid version number has been specified.");
@@ -471,7 +471,7 @@ define(function (require, exports) {
             d = '';
             e = '';
         } else {
-            info_message += ' ' + gettext('Please wait until GeoNode finished configuring it!');
+            info_message += ' ' + gettext('Please wait until SMap finished configuring it!');
             a = '';
         }
         var msg_col = "";

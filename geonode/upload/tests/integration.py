@@ -220,7 +220,7 @@ class UploaderBase(GeoNodeBaseTestSupport):
 
     def complete_upload(self, file_path, resp, data, is_raster=False):
         """Method to check if a layer was correctly uploaded to the
-        GeoNode.
+        SMap.
 
         arguments: file path, the django http response
 
@@ -430,7 +430,7 @@ class UploaderBase(GeoNodeBaseTestSupport):
 class TestUpload(UploaderBase):
 
     def test_shp_upload(self):
-        """ Tests if a vector layer can be uploaded to a running GeoNode/GeoServer"""
+        """ Tests if a vector layer can be uploaded to a running SMap/GeoServer"""
         layer_name = 'san_andres_y_providencia_water'
         fname = os.path.join(
             GOOD_DATA,
@@ -502,7 +502,7 @@ class TestUpload(UploaderBase):
                     _post_migrate_link_meta = None
 
     def test_raster_upload(self):
-        """ Tests if a raster layer can be upload to a running GeoNode GeoServer"""
+        """ Tests if a raster layer can be upload to a running SMap GeoServer"""
         fname = os.path.join(GOOD_DATA, 'raster', 'relief_san_andres.tif')
         self.upload_file(fname, self.complete_raster_upload,
                          check_name='relief_san_andres')

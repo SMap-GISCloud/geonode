@@ -58,7 +58,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
 
-    help = 'Restore the GeoNode application data'
+    help = 'Restore the SMap application data'
 
     def add_arguments(self, parser):
 
@@ -108,22 +108,22 @@ class Command(BaseCommand):
             '--backup-file',
             dest='backup_file',
             default=None,
-            help='Backup archive containing GeoNode data to restore.')
+            help='Backup archive containing SMap data to restore.')
 
         parser.add_argument(
             '--recovery-file',
             dest='recovery_file',
             default=None,
-            help='Backup archive containing GeoNode data to restore.')
+            help='Backup archive containing SMap data to restore.')
 
         parser.add_argument(
             '--backup-files-dir',
             dest='backup_files_dir',
             default=None,
-            help="Directory containing GeoNode backups. Restoration procedure will pick "
+            help="Directory containing SMap backups. Restoration procedure will pick "
                  "the newest created/modified backup which wasn't yet restored, and was "
                  "created after creation date of the currently used backup (the newest "
-                 "if no backup was yet restored on the GeoNode instance)."
+                 "if no backup was yet restored on the SMap instance)."
         )
 
         parser.add_argument(
@@ -230,13 +230,13 @@ class Command(BaseCommand):
         print("Before proceeding with the Restore, please ensure that:")
         print(" 1. The backend (DB or whatever) is accessible and you have rights")
         print(" 2. The GeoServer is up and running and reachable from this machine")
-        message = 'WARNING: The restore will overwrite ALL GeoNode data. You want to proceed?'
+        message = 'WARNING: The restore will overwrite ALL SMap data. You want to proceed?'
         if force_exec or utils.confirm(prompt=message, resp=False):
 
             # Create Target Folder
             # restore_folder must be located in the directory Geoserver has access to (and it should
             # not be Geoserver data dir)
-            # for dockerized project-template GeoNode projects, it should be located in /backup-restore,
+            # for dockerized project-template SMap projects, it should be located in /backup-restore,
             # otherwise default tmp directory is chosen
             temp_dir_path = backup_files_dir if os.path.exists(backup_files_dir) else None
 
@@ -338,7 +338,7 @@ class Command(BaseCommand):
                     traceback.print_exc()
 
                 try:
-                    # Deactivate GeoNode Signals
+                    # Deactivate SMap Signals
                     with DisableDjangoSignals():
                         # Flush DB
                         try:
@@ -404,7 +404,7 @@ class Command(BaseCommand):
 
                             # skip restoration of static files of apps not located under LOCAL_ROOT path
                             # (check to prevent overriding files from site-packages
-                            #  in project-template based GeoNode projects)
+                            #  in project-template based SMap projects)
                             if getattr(settings, 'LOCAL_ROOT', None) and \
                                     not static_files_folder.startswith(settings.LOCAL_ROOT):
                                 print(
@@ -429,7 +429,7 @@ class Command(BaseCommand):
 
                             # skip restoration of template files of apps not located under LOCAL_ROOT path
                             # (check to prevent overriding files from site-packages
-                            #  in project-template based GeoNode projects)
+                            #  in project-template based SMap projects)
                             if getattr(settings, 'LOCAL_ROOT', None) and \
                                     not template_files_folder.startswith(settings.LOCAL_ROOT):
                                 print(
@@ -454,7 +454,7 @@ class Command(BaseCommand):
 
                             # skip restoration of locale files of apps not located under LOCAL_ROOT path
                             # (check to prevent overriding files from site-packages
-                            #  in project-template based GeoNode projects)
+                            #  in project-template based SMap projects)
                             if getattr(settings, 'LOCAL_ROOT', None) and \
                                     not locale_files_folder.startswith(settings.LOCAL_ROOT):
                                 print(

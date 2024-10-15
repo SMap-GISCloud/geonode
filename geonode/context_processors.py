@@ -86,7 +86,7 @@ def resource_urls(request):
         TWITTER_SITE=getattr(
             settings,
             'TWITTER_SITE',
-            '@GeoNode'),
+            '@SMap'),
         TWITTER_HASHTAGS=getattr(
             settings,
             'TWITTER_HASHTAGS',
@@ -190,7 +190,7 @@ def resource_urls(request):
         OGC_SERVER=getattr(settings, 'OGC_SERVER', None),
         DELAYED_SECURITY_SIGNALS=getattr(settings, 'DELAYED_SECURITY_SIGNALS', False),
         READ_ONLY_MODE=getattr(Configuration.load(), 'read_only', False),
-        # GeoNode Apps
+        # SMap Apps
         GEONODE_APPS_ENABLE=getattr(settings, 'GEONODE_APPS_ENABLE', False),
         GEONODE_APPS_NAME=getattr(settings, 'GEONODE_APPS_NAME', 'Apps'),
         GEONODE_APPS_NAV_MENU_ENABLE=getattr(settings, 'GEONODE_APPS_NAV_MENU_ENABLE', False),

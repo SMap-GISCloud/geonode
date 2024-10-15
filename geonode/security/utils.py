@@ -688,7 +688,7 @@ class AdvancedSecurityWorkflowManager:
             '''
             Internally the set_permissions function will automatically handle the permissions
             that needs to be assigned to re resource.
-            Background at: https://github.com/GeoNode/geonode/pull/8145
+            Background at: https://github.com/SMap/geonode/pull/8145
             If the user is demoted, we assign by default at least the view and the download permission
             to the resource
             '''
